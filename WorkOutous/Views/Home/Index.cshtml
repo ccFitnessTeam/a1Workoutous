@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html ng-app="WorkOutous">
+<head>
+    <title>WorkOutous</title>
+    <meta charset="utf-8">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <base href="/" />
+</head>
+<body ng-controller="Main as vm">
+        <h1>WorkOutous</h1>
+        <div>
+            <a ui-sref="home">Home</a> /
+            <a ui-sref-"#">About</a>
+        </div>
+        <hr />
+        {{vm.message}}
+    <div class="container">
+        <ui-view></ui-view>
+    </div>
+
+    <!---Lib Files-->
+    <script src="~/lib/angular/angular.js"></script>
+    <script src="~/lib/angular-resource/angular-resource.js"></script>
+    <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    
+    <!---Controllers & Services-->
+    <script src="~/ngApp/controllers/MainController.js"></script>
+    <script src="~/ngApp/services/MainService.js"></script>
+    <!--angular app-->
+    <script src="~/ngApp/app.js"></script>
+</body>
+</html>
