@@ -9,10 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\ngApp\app.js" />
-    <Content Include="wwwroot\ngApp\controllers\MainController.js" />
-    <Content Include="wwwroot\ngApp\services\MainService.js" />
-    <Content Include="wwwroot\ngApp\templates\home.html" />
+    <Compile Remove="Properties\wwwroot\**" />
+    <Content Remove="Properties\wwwroot\**" />
+    <EmbeddedResource Remove="Properties\wwwroot\**" />
+    <None Remove="Properties\wwwroot\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

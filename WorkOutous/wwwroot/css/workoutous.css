@@ -1,0 +1,103 @@
+/***********************************************ALL PAGES***********************************************/
+body{
+    background-color:rgb(229,229,229); 
+}
+
+/*NAV BACKGROUND COLOR*/
+.nav {
+    background-color: rgb(247,202,54);
+    margin: 0;
+    padding: 0;
+}
+
+/*NAV LIST FONT STYLE*/
+.nav li{
+    list-style-type: none;
+    font-weight: bolder;
+    font-size: 15px;
+    margin: 0;
+}
+
+/*NAV TEXT COLOR*/
+.nav li a{
+    color: white;
+}
+
+/*HIGHLIGHT ACTIVE NAV TAB*/
+ .active {
+    background-color: rgb(26, 182, 255);
+} 
+
+/*NAV LINKS TO LEFT*/
+.left-nav{
+    float: left;
+    padding-left: none;
+}
+
+/*NAV LINKS TO RIGHT*/
+.right-nav{
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+} 
+
+/*SCROLL BACK TO TOP BOTTON*/
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(26, 182, 255); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/*SCROLL BACK TO TOP BOTTON HOVER*/
+#topBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.body_div{
+    height:2000px;
+    background-color: rgb(229,229,229);
+
+}
+
+/*FOOTER*/
+footer{
+    background-color: rgb(229,229,229);
+    text-align: center;
+}
+/***********************************************LOGIN PAGE***********************************************/
+/*LOGO ON LOGIN PAGE*/
+.logo_on_login{
+   height: 100%;
+    width: 100%;
+}
+
+/*MAIN TEXT*/
+.main_text{
+    text-align: center;
+}
+/*MAIN TEXT HORIZONTAL LINES*/
+.main_text hr{
+    background-color: black;
+    height: 2px;
+}
+
+.login_div{
+    text-align: center;
+}
+
+#userErrMsg, #passErrMsg{
+    color: red;
+}
+
+
+
+/***********************************************REGISTER PAGE***********************************************/

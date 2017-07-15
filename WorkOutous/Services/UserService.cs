@@ -20,5 +20,11 @@ namespace WorkOutous.Services
             var users = _repo.Query<User>().ToList();
             return users;
         }
+
+        public List<User> GetOneUsers()
+        {
+            var users = _repo.Query<User>().ToList();
+            return users;
+        }
     }
 }

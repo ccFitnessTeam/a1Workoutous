@@ -19,17 +19,21 @@ namespace WorkOutous.Migrations
             modelBuilder.Entity("WorkOutous.Models.User", b =>
                 {
                     b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email");
+                        .ValueGeneratedOnAdd();           
 
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
 
+                    b.Property<string>("UserName");
+
+                    b.Property<string>("Email");
+
+                    b.Property<bool>("Administrator");
+
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
         }
     }

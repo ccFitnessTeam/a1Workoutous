@@ -6,21 +6,30 @@
 <head>
     <title>WorkOutous</title>
     <meta charset="utf-8">
+    <!--Responsive Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <base href="/" />
+    <!--Workoutous CSS-->
+    <link rel="stylesheet" href="css/workoutous.css">
 </head>
 <body ng-controller="Main as vm">
-        <h1>WorkOutous</h1>
+        @*<h1>Workoutous</h1>
         <div>
             <a ui-sref="home">Home</a> /
-            <a ui-sref-"#">About</a>
+            <a ui-sref="#">About</a> /
+            <a ui-sref="login">Login</a> /
+            <a ui-sref="register">Register</a>
         </div>
         <hr />
-        {{vm.message}}
+        {{vm.message}}*@
     <div class="container">
         <ui-view></ui-view>
     </div>
+
+    <!--Button to scroll to top of page-->
+    <button onclick="topFunction()" id="topBtn" title="Go to top"> 🢁 TOP </button>
 
     <!---Lib Files-->
     <script src="~/lib/angular/angular.js"></script>
@@ -34,5 +43,12 @@
     <script src="~/ngApp/services/MainService.js"></script>
     <!--angular app-->
     <script src="~/ngApp/app.js"></script>
+    <!--Workoutous JS file-->
+    <script src="js/workoutous.js"></script>
+
+    <!--FOOTER-->
+    <footer>
+        <h1>This is the footer</h1>
+    </footer>
 </body>
 </html>

@@ -17,3 +17,15 @@ class MainController {
         this.main.getUsers().then((res) => { this.users = res.data });
     }
 }
+
+class LoginController {
+    constructor($http) {
+        this.message = 'login page';
+    }
+}
+
+class RegisterController {
+    constructor($http) {
+        this.message = 'register page';
+    }
+}

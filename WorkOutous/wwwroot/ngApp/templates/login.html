@@ -1,0 +1,66 @@
+<!--NAV-->
+<nav>
+    <ul class="nav">
+        <li><a class="left-nav " ui-sref="home">Workoutous</a></li>
+        <li><a class="right-nav" ui-sref="register">Register</a></li>
+        <li><a class="right-nav active" ui-sref="login">Login</a></li>
+    </ul>
+</nav>
+<h1>LOGIN PAGE</h1>
+
+<!--BODY DIV-->
+<div class="continer body_div login_page">
+    <!--LOGO DIV-->
+    <div class="col-lg-4 col-xs-12">
+        <img class="logo_on_login" src="images/WorkoutousLogo.png"> 
+    </div>
+    <!--MAIN TEXT DIV-->
+    <div class="main_text col-lg-8 col-xs-12">
+        <h3>REGISTER to get the full benefits.</h3>
+        <hr />
+        <h3>VISITOR use the visitor option for a trial version.</h3>      
+        <hr />
+        <h3>
+            Workoutous will have you working out at your best. 
+            Build workouts, get motivation from friends, plan and achieve it.  
+            See yourself morphed into the body you want. 
+        </h3>
+    </div>
+
+    <!--LOGIN DIV-->
+    <div id="login_section" class="container login_div">   
+        <div class="col-lg-12 col-lg-offset-0 col-xs-12">
+            <form>                
+                <h2>Log In</h2>
+
+                <input id="Username" type="text" placeholder="Username" ng-model="vm.test" required>                    
+                <p id="userErrMsg"></p>
+                <input id="Pwd" type="Password" placeholder="Password" ng-model="vm.pass" required>
+                <p id="passErrMsg"></p> 
+
+                <button class="" href="" onclick="loginValidation()">Sign In</button>
+
+            </form>
+                <button class="" href="">Visitor</button>
+                <button class="" ui-sref="register">Register</button>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<!-- <div class="nav col-lg-12 col-xs-12">
+    <nav>
+        <ul>
+            <li><a class="left-nav active" href="/login">Workoutous</a></li>
+            <li><a class="right-nav" href="/register">Register</a></li>
+            <li><a class="right-nav active" href="/login">Login</a></li>
+        </ul>
+    </nav>
+</div> -->
+
+
+
