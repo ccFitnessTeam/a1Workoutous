@@ -1,6 +1,6 @@
-﻿@{
+﻿@*@{
     ViewData["Title"] = "Home Page";
-}
+}*@
 <!DOCTYPE html>
 <html ng-app="WorkOutous">
 <head>
@@ -13,8 +13,31 @@
     <base href="/" />
     <!--Workoutous CSS-->
     <link rel="stylesheet" href="css/workoutous.css">
+    <!--Materialize CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body ng-controller="Main as vm">
+    <!--NAV-->
+        <nav>
+            <div class="nav nav-wrapper">
+                <a ui-sref="home" class="brand-logo center">Workoutous</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="login">Login</a></li>
+                    <li><a class="tab" ui-sref="#" >TAB</a></li>
+                    <li><a class="tab" ui-sref="#">TAB</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><img class="logo_on_login" src="images/WorkoutousLogo.png"> </li>
+                    <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="login">Login</a></li>
+                    <li><a class="tab" ui-sref="#">TAB</a></li>
+                    <li><a class="tab"ui-sref="#">TAB</a></li>
+                </ul> 
+            </div>
+        </nav>
         @*<h1>Workoutous</h1>
         <div>
             <a ui-sref="home">Home</a> /
@@ -45,6 +68,10 @@
     <script src="~/ngApp/app.js"></script>
     <!--Workoutous JS file-->
     <script src="js/workoutous.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <!--Materialize JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
     <!--FOOTER-->
     <footer>

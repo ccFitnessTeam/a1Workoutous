@@ -2,7 +2,10 @@
 
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
-app.controller("Main", MainController, LoginController, RegisterController );
+app.controller("Main", MainController);
+app.controller("Login", LoginController);
+app.controller("Register", RegisterController);
+
 app.service("$mainService", MainService);
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider

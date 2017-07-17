@@ -4,42 +4,64 @@ body{
 }
 
 /*NAV BACKGROUND COLOR*/
+
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+}
+
 .nav {
     background-color: rgb(247,202,54);
+    position: static;
     margin: 0;
     padding: 0;
 }
 
+nav ul li a {
+    text-decoration: none;
+}
+
+/*SIDE NAV BACKGROUND COLOR*/
+#mobile-demo {
+    background-color: lightyellow;
+}
+
 /*NAV LIST FONT STYLE*/
-.nav li{
+/*.nav li{
     list-style-type: none;
     font-weight: bolder;
     font-size: 15px;
     margin: 0;
-}
-
+}*/
 /*NAV TEXT COLOR*/
-.nav li a{
+/*.nav li a{
     color: white;
+}*/
+/*HIGHLIGHT ACTIVE NAV TAB*/
+/*.active {
+    background-color: rgb(26, 182, 255);
+}*/
+/*HIGHLIGHT ACTIVE NAV TAB*/
+.tab:focus {
+    background-color: rgb(26, 182, 255);
 }
 
-/*HIGHLIGHT ACTIVE NAV TAB*/
- .active {
-    background-color: rgb(26, 182, 255);
-} 
+.mobile-tab:focus {
+    color: rgb(26, 182, 255);
+}
 
 /*NAV LINKS TO LEFT*/
-.left-nav{
+/*.left-nav{
     float: left;
     padding-left: none;
-}
+}*/
 
 /*NAV LINKS TO RIGHT*/
-.right-nav{
+/*.right-nav{
     float: right;
     padding-right: 10px;
     padding-left: 10px;
-} 
+}*/ 
 
 /*SCROLL BACK TO TOP BOTTON*/
 #topBtn {
