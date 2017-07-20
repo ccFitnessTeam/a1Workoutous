@@ -1,22 +1,3 @@
-//Input validation
-function loginValidation(){
-   var usernameExists = document.getElementById("Username").value;
-   var passwordExists = document.getElementById("Pwd").value;
-   var userErrorMessage = document.getElementById("userErrMsg");
-   var pwdErrorMessage = document.getElementById("passErrMsg");
-
-   userErrorMessage.innerHTML = '';
-   pwdErrorMessage.innerHTML = '';
-   
-   if (usernameExists === "" ){
-       userErrorMessage.innerHTML = 'Please enter a Username.';
-   }
-
-   if (passwordExists === "" ){
-       pwdErrorMessage.innerHTML = 'Please enter a Password.';
-   }
-}
-
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -39,3 +20,28 @@ $(document).ready(function () {
     $(".button-collapse").sideNav();
 });
 
+
+//Input validation
+function loginValidation(){
+   var usernameExists = document.getElementById("Username").value;
+   var passwordExists = document.getElementById("Pwd").value;
+   var userErrorMessage = document.getElementById("userErrMsg");
+   var pwdErrorMessage = document.getElementById("passErrMsg");
+
+   userErrorMessage.innerHTML = '';
+   pwdErrorMessage.innerHTML = '';
+
+   if (usernameExists === "" ){
+       userErrorMessage.innerHTML = 'Please enter a Username.';
+   }
+
+   if (passwordExists === "" ){
+       pwdErrorMessage.innerHTML = 'Please enter a Password.';
+   }
+}
+
+
+//carousel
+$(document).ready(function () {
+    $('.carousel').carousel();
+});

@@ -1,6 +1,6 @@
-﻿@*@{
+﻿@{
     ViewData["Title"] = "Home Page";
-}*@
+}
 <!DOCTYPE html>
 <html ng-app="WorkOutous">
 <head>
@@ -16,43 +16,73 @@
     <!--Materialize CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body ng-controller="Main as vm">
     <!--NAV-->
+    <div id="nav">
         <nav>
-            <div class="nav nav-wrapper">
+            <div class="nav nav-wrapper" id="wrappers">
                 <a ui-sref="home" class="brand-logo center">Workoutous</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="large material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a class="tab" ui-sref="register">Register</a></li>
                     <li><a class="tab" ui-sref="login">Login</a></li>
-                    <li><a class="tab" ui-sref="#" >TAB</a></li>
-                    <li><a class="tab" ui-sref="#">TAB</a></li>
+                    <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#LoginModal">Login Modal</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
+                    <li><a class="tab" ui-sref="">Profile</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><img class="logo_on_login" src="images/WorkoutousLogo.png"> </li>
-                    <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="">Profile</a></li>
                     <li><a class="tab" ui-sref="login">Login</a></li>
-                    <li><a class="tab" ui-sref="#">TAB</a></li>
-                    <li><a class="tab"ui-sref="#">TAB</a></li>
-                </ul> 
+                    <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#LoginModal">Login Modal</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
+                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+
+                </ul>
             </div>
         </nav>
+    </div>
         @*<h1>Workoutous</h1>
-        <div>
-            <a ui-sref="home">Home</a> /
-            <a ui-sref="#">About</a> /
-            <a ui-sref="login">Login</a> /
-            <a ui-sref="register">Register</a>
-        </div>
-        <hr />
+    <div>
+        <a ui-sref="home">Home</a> /
+        <a ui-sref="#">About</a> /
+        <a ui-sref="login">Login</a> /
+        <a ui-sref="register">Register</a>
+    </div>
+    <hr />
         {{vm.message}}*@
     <div class="container">
         <ui-view></ui-view>
     </div>
 
     <!--Button to scroll to top of page-->
-    <button onclick="topFunction()" id="topBtn" title="Go to top"> 🢁 TOP </button>
+    <button class="" onclick="topFunction()" id="topBtn" title="Go to top"> 🢁 TOP </button>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text title">Workoutous</h5>
+                    <p class="grey-text text-lighten-4">Some Text Here. Some Text Here. Some Text Here. Some Text Here.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Footer Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Footer Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Footer Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Footer Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!---Lib Files-->
     <script src="~/lib/angular/angular.js"></script>
@@ -69,13 +99,7 @@
     <!--Workoutous JS file-->
     <script src="js/workoutous.js"></script>
     <script src="jquery-3.2.1.min.js"></script>
-
     <!--Materialize JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-
-    <!--FOOTER-->
-    <footer>
-        <h1>This is the footer</h1>
-    </footer>
 </body>
 </html>
