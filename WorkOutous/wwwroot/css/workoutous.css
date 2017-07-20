@@ -1,24 +1,17 @@
 /***********************************************ALL PAGES***********************************************/
-body{
-    background-color:rgb(229,229,229); 
+/*BODY*/
+body {
+    /*background-color: rgb(229,229,229);*/
+    background-image: url("http://cdn-mf0.heartyhosting.com/sites/mensfitness.com/files/styles/wide_videos/public/1280-plates.jpg?itok=1cVfLPyi (92kB) ");
+    padding: 0px;
+    margin: 0px;
+    color : white;
 }
 
 /*NAV BACKGROUND COLOR*/
-
-.nav-wrapper {
-    position: fixed;
-    top: 0;
-}
-
 .nav {
-    background-color: rgb(247,202,54);
-    position: static;
-    margin: 0;
-    padding: 0;
-}
 
-nav ul li a {
-    text-decoration: none;
+    background-color: rgb(247,202,54);
 }
 
 /*SIDE NAV BACKGROUND COLOR*/
@@ -86,16 +79,20 @@ nav ul li a {
 
 .body_div{
     height:2000px;
-    background-color: rgb(229,229,229);
+    background-color: lightgray;
 
 }
 
 /*FOOTER*/
-footer{
-    background-color: rgb(229,229,229);
-    text-align: center;
+footer {
+    background-color: rgb(247,202,54);
+    color: rgb(247,202,54);
 }
-/***********************************************LOGIN PAGE***********************************************/
+
+footer .title{
+    font-size:50px;
+}
+/***********************************************LOGIN MODAL***********************************************/
 /*LOGO ON LOGIN PAGE*/
 .logo_on_login{
    height: 100%;
@@ -122,4 +119,52 @@ footer{
 
 
 
-/***********************************************REGISTER PAGE***********************************************/
+/***********************************************REGISTER MODAL***********************************************/
+/*rgba(255, 255, 255, .15);*/ 
+
+.modal {
+    max-height: 100%;
+    width: 100%;
+    margin: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+}
+
+/***********************************************FRONT MODAL***********************************************/
+
+.frontBody {
+    background-image: url("http://cdn-mf0.heartyhosting.com/sites/mensfitness.com/files/styles/wide_videos/public/1280-plates.jpg?itok=1cVfLPyi (92kB) "); background-size: 100%;
+    margin-top: -20px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.jumbotron {
+    margin-left: -250px;
+    margin-right: -250px;
+    margin-bottom: -50px;
+    padding-bottom: -20px;
+    padding-top: -50px;
+    background: transparent;
+}
+
+#jtronText {
+    color: gold;
+    text-align: center;
+    margin-top: -25px;
+    font: italic bold 150px Georgia, serif;
+}
+
+.navbar {
+    color: white;
+}
+
+#profileBTN {
+    float: right;
+    color: gold;
+    font: italic bold 25px Georgia, serif;
+}
+
+.progress {
+    background: transparent;
+}

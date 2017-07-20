@@ -5,6 +5,8 @@ var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 app.controller("Main", MainController);
 app.controller("Login", LoginController);
 app.controller("Register", RegisterController);
+app.controller("Front", FrontController);
+
 
 app.service("$mainService", MainService);
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
@@ -25,6 +27,12 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             url: '/register',
             templateUrl: '/ngApp/templates/register.html',
             controller: RegisterController,
+            controllerAs: 'ctrl'
+        })
+        .state('front', {
+            url: '/front',
+            templateUrl: '/ngApp/templates/front.html',
+            controller: FrontController,
             controllerAs: 'ctrl'
         })
         .state('notFound', {
