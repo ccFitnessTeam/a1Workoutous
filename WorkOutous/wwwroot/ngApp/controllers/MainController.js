@@ -23,5 +23,11 @@ class MainController {
         constructor($http) {
         this.message = 'register page';
     }
-    }
+}
 
+
+class FrontController {
+    constructor($http) {
+        this.message = 'front page';
+    }
+}
