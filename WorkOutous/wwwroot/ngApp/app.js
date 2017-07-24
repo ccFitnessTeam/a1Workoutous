@@ -2,13 +2,12 @@
 
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
-app.controller("Main", MainController);
-app.controller("Login", LoginController);
-app.controller("Register", RegisterController);
-app.controller("Front", FrontController);
-
-
+//controllers
+app.controller("Main", MainController).controller("Login",LogInController).controller("Register", RegisterController).controller("Front", FrontController);
+//services
 app.service("$mainService", MainService);
+
+//config
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
@@ -20,7 +19,7 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
         .state('login', {
             url: '/login',
             templateUrl: '/ngApp/templates/login.html',
-            controller: LoginController,
+            controller: LogInController,
             controllerAs: 'ctrl'
         })
         .state('register', {

@@ -43,18 +43,7 @@ body {
     color: rgb(26, 182, 255);
 }
 
-/*NAV LINKS TO LEFT*/
-/*.left-nav{
-    float: left;
-    padding-left: none;
-}*/
 
-/*NAV LINKS TO RIGHT*/
-/*.right-nav{
-    float: right;
-    padding-right: 10px;
-    padding-left: 10px;
-}*/ 
 
 /*SCROLL BACK TO TOP BOTTON*/
 #topBtn {

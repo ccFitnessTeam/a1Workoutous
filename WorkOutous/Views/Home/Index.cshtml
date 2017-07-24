@@ -28,7 +28,7 @@
                 <ul class="right hide-on-med-and-down">
                     <li><a class="tab" ui-sref="login">Login</a></li>
                     <li><a class="tab" ui-sref="register">Register</a></li>
-                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+                    <li><a class="tab" ui-sref="home">Front Page</a></li>
                     <li><a class="tab" data-toggle="modal" data-target="#LoginModal">Login Modal</a></li>
                     <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
                     <li><a class="tab" ui-sref="">Profile</a></li>
@@ -38,7 +38,7 @@
                     <li><a class="tab" ui-sref="">Profile</a></li>
                     <li><a class="tab" ui-sref="login">Login</a></li>
                     <li><a class="tab" ui-sref="register">Register</a></li>
-                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+                    <li><a class="tab" ui-sref="home">Front Page</a></li>
                     <li><a class="tab" data-toggle="modal" data-target="#LoginModal">Login Modal</a></li>
                     <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
                     <li><a class="tab" ui-sref="front">Front Page</a></li>
@@ -47,15 +47,7 @@
             </div>
         </nav>
     </div>
-        @*<h1>Workoutous</h1>
-    <div>
-        <a ui-sref="home">Home</a> /
-        <a ui-sref="#">About</a> /
-        <a ui-sref="login">Login</a> /
-        <a ui-sref="register">Register</a>
-    </div>
-    <hr />
-        {{vm.message}}*@
+        
     <div class="container">
         <ui-view></ui-view>
     </div>
@@ -94,6 +86,8 @@
     <!---Controllers & Services-->
     <script src="~/ngApp/controllers/MainController.js"></script>
     <script src="~/ngApp/services/MainService.js"></script>
+    <script src="~/ngApp/controllers/LogInController.js"></script>
+
     <!--angular app-->
     <script src="~/ngApp/app.js"></script>
     <!--Workoutous JS file-->

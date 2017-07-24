@@ -14,7 +14,7 @@ namespace WorkOutous.Data
 
         }
         //add model for db migration
-        public DbSet<User> User { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
 
     }
 }

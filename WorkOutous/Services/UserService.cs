@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WorkOutous.Models;
+using WorkOutous.ViewModels;
 
 namespace WorkOutous.Services
 {
@@ -15,16 +16,16 @@ namespace WorkOutous.Services
             _repo = repo;
         }
 
-        public List<User> GetAllUsers()
+        public List<AppUser> GetAllUsers()
         {
-            var users = _repo.Query<User>().ToList();
-            return users;
+            var AppUser = _repo.Query<AppUser>().ToList();
+            return AppUser;
         }
 
-        public List<User> GetOneUsers()
+        public AppUser GetAUser(string username, string password)
         {
-            var users = _repo.Query<User>().ToList();
-            return users;
+            var user = _repo.Query<AppUser>().Where(u => u.UserName == username).Where(u => u.Password == password).FirstOrDefault();
+            return user;
         }
     }
 }

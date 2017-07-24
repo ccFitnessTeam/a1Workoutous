@@ -5,6 +5,7 @@ namespace WorkOutous.Services
 {
     public interface IUserService
     {
-        List<User> GetAllUsers();
+        List<AppUser> GetAllUsers();
+        AppUser GetAUser(string userName, string password);
     }
 }
