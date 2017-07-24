@@ -2,7 +2,7 @@
 
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
-app.controller("Main", MainController, LoginController, RegisterController );
+app.controller("Main", MainController).controller("Login",LogInController);
 app.service("$mainService", MainService);
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
@@ -15,7 +15,7 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
         .state('login', {
             url: '/login',
             templateUrl: '/ngApp/templates/login.html',
-            controller: LoginController,
+            controller: LogInController,
             controllerAs: 'ctrl'
         })
         .state('register', {

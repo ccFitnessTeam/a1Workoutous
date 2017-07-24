@@ -31,7 +31,6 @@ body{
 /*NAV LINKS TO LEFT*/
 .left-nav{
     float: left;
-    padding-left: none;
 }
 
 /*NAV LINKS TO RIGHT*/

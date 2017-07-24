@@ -1,24 +1,19 @@
 //Input validation
-function loginValidation(){
-   var usernameExists = document.getElementById("Username").value;
-   var passwordExists = document.getElementById("Pwd").value;
-   var userErrorMessage = document.getElementById("userErrMsg");
-   var pwdErrorMessage = document.getElementById("passErrMsg");
-
-   userErrorMessage.innerHTML = '';
-   pwdErrorMessage.innerHTML = '';
-   
-   if (usernameExists === "" ){
-       userErrorMessage.innerHTML = 'Please enter a Username.';
-   }
-
-   if (passwordExists === "" ){
-       pwdErrorMessage.innerHTML = 'Please enter a Password.';
-   }
+//app.js
+function HandleIT() {
+    var name = document.getElementById('<%=txtname.ClientID %>').value;
+    var address = document.getElementById('<%=txtaddress.ClientID %>').value;
+    PageMethods.ProcessIT(usernameExists, passwordExists, onSucess, onError);
+    function onSucess(result) {
+        alert(result);
+    }
+    function onError(result) {
+        alert('Something wrong.');
+    }
 }
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction();};
 
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {

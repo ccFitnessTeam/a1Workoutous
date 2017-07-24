@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorkOutous.Models
 {
-    public class User
+    public class AppUser
     {
         [Key]
         public int UserId { get; set; }
@@ -14,6 +14,7 @@ namespace WorkOutous.Models
         public string LastName { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public bool Administrator { get; set; }
 
 
