@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using WorkOutous.Services;
 using WorkOutous.Models;
 using WorkOutous.ViewModels;
-//using System.Web.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,7 +14,7 @@ namespace WorkOutous.API
     [Route("api/[controller]")]
     public class UserController : Controller
     {
-        Services.IUserService _service;
+        IUserService _service;
         public UserController(Services.IUserService service)
         {
            _service = service;
@@ -52,23 +51,6 @@ namespace WorkOutous.API
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
-        [HttpGet]
-        public AppUser GetUser([FromBody]LoginUser user)
-        {
-            try
-            {
-                var AppUser = _service.GetAUser(user.UserName, user.Password);
-                return AppUser;
-            }
-            catch
-            {
-                AppUser NoLogin = new AppUser{};
-                NoLogin.UserName = "failure!";
-                    return NoLogin;
-            }
-            
-           
         }
     }
 }

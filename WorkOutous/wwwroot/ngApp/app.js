@@ -3,7 +3,8 @@
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
 //controllers
-app.controller("Main", MainController).controller("Login",LogInController).controller("Register", RegisterController).controller("Front", FrontController);
+//app.controller("Main", MainController).controller("Login",LogInController).controller("Register", RegisterController).controller("Front", FrontController);
+app.controller("Main", MainController).controller("Login", LogInController);
 //services
 app.service("$mainService", MainService);
 

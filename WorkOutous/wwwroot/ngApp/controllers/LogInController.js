@@ -1,8 +1,9 @@
-﻿class LogInController {
+﻿var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
+class LogInController {
     constructor($mainService) {
         this.message = 'login page';
         this.mainService = $mainService;
-        this.userLoginResource = "/api/user/";
+        //this.userLoginResource = "/api/user/";
         this.user;
         this.IsLoggedIn;
         this.IsAdmin;

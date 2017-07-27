@@ -107,20 +107,6 @@ footer .title{
 }
 
 
-
-/***********************************************REGISTER MODAL***********************************************/
-/*rgba(255, 255, 255, .15);*/ 
-
-.modal {
-    max-height: 100%;
-    width: 100%;
-    margin: auto;
-    border-radius: 2px;
-    will-change: top, opacity;
-}
-
-/***********************************************FRONT MODAL***********************************************/
-
 .frontBody {
     background-image: url("http://cdn-mf0.heartyhosting.com/sites/mensfitness.com/files/styles/wide_videos/public/1280-plates.jpg?itok=1cVfLPyi (92kB) "); background-size: 100%;
     margin-top: -20px;
