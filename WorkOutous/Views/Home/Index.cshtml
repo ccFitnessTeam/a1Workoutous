@@ -9,15 +9,18 @@
     <!--Responsive Meta Tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" />
+    @*<link href="~/css/site.css" rel="stylesheet" />*@
     <base href="/" />
-    <!--Workoutous CSS-->
-    <link rel="stylesheet" href="css/workoutous.css">
+
     <!--Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!--Workoutous CSS-->
+    <link rel="stylesheet" href="css/workoutous.css">
+
 </head>
+@*<body ng-controller="LogInModalController as controller">*@
 <body ng-controller="Main as vm">
     <!--NAV-->
     <div id="nav">
@@ -29,23 +32,41 @@
                     <li><a class="tab" ui-sref="login">Login</a></li>
                     <li><a class="tab" ui-sref="register">Register</a></li>
                     <li><a class="tab" ui-sref="front">Front Page</a></li>
-                    <li><a class="tab" ui-sref="#">Profile</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#LoginModal" ng-click="controller.showModal()">Login Modal</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
+                    <li><a class="tab" >Profile</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><img class="logo_on_login" src="images/WorkoutousLogo.png"> </li>
-                    <li><a class="tab" ui-sref="#">Profile</a></li>
+                    <li><a class="tab" >Profile</a></li>
                     <li><a class="tab" ui-sref="login">Login</a></li>
                     <li><a class="tab" ui-sref="register">Register</a></li>
+                    <li><a class="tab" ui-sref="front">Front Page</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#LoginModal">Login Modal</a></li>
+                    <li><a class="tab" data-toggle="modal" data-target="#RegisterModal">Register Modal</a></li>
                     <li><a class="tab" ui-sref="front">Front Page</a></li>
 
                 </ul>
             </div>
         </nav>
     </div>
-        
+    @*<h1>Workoutous</h1>
+        <div>
+            <a ui-sref="home">Home</a> /
+            <a ui-sref="#">About</a> /
+            <a ui-sref="login">Login</a> /
+            <a ui-sref="register">Register</a>
+        </div>
+        <hr />
+            {{vm.message}}*@
+
+
+
     <div class="container">
         <ui-view></ui-view>
     </div>
+
+
 
     <!--Button to scroll to top of page-->
     <button class="" onclick="topFunction()" id="topBtn" title="Go to top"> 🢁 TOP </button>
@@ -77,18 +98,19 @@
     <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-    
     <!---Controllers & Services-->
     <script src="~/ngApp/controllers/MainController.js"></script>
     <script src="~/ngApp/services/MainService.js"></script>
     <script src="~/ngApp/controllers/LogInController.js"></script>
+    <script src="~/ngApp/controllers/LogInModalController.js"></script>
 
     <!--angular app-->
     <script src="~/ngApp/app.js"></script>
+    <!--Materialize JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
     <!--Workoutous JS file-->
     <script src="js/workoutous.js"></script>
     @*<script src="jquery-3.2.1.min.js"></script>*@
-    <!--Materialize JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
 </body>
 </html>
