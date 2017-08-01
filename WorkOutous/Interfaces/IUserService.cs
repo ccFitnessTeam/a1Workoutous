@@ -7,5 +7,6 @@ namespace WorkOutous.Services
     {
         List<AppUser> GetAllUsers();
         AppUser GetAUser(string userName, string password);
+
     }
 }
