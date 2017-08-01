@@ -92,46 +92,6 @@ footer {
 footer .title{
     font-size:50px;
 }
-/***********************************************LOGIN MODAL***********************************************/
-/*LOGO ON LOGIN PAGE*/
-.logo_on_login{
-   height: 100%;
-    width: 100%;
-}
-
-/*MAIN TEXT*/
-.main_text{
-    text-align: center;
-}
-/*MAIN TEXT HORIZONTAL LINES*/
-.main_text hr{
-    background-color: black;
-    height: 2px;
-}
-
-.login_div{
-    text-align: center;
-}
-
-#userErrMsg, #passErrMsg{
-    color: red;
-}
-
-
-
-/***********************************************REGISTER MODAL***********************************************/
-
-
-
-/***********************************************BOTH MODAL***********************************************/
-
-.modal {
-
-    background-color: transparent;
-    max-height: 100%;
-    width: 100%;
-
-}
 
 /***********************************************FRONT PAGE***********************************************/
 

@@ -9,7 +9,7 @@ class LogInController {
         this.IsLoggedIn;
         this.IsAdmin;
 
-        this.$uibModalInstance = $uibModalInstance;
+
     }
 
     loginValidation() {
@@ -43,6 +43,6 @@ class LogInController {
     }
 }
 
-LogInController.$inject = ['$uibModalInstance'];
+
 
 angular.module('WorkOutous').controller('LoginController', LogInController);

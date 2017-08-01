@@ -22,7 +22,6 @@
   <ItemGroup>
     <Content Include="wwwroot\ngApp\controllers\controller.js" />
     <Content Include="wwwroot\ngApp\controllers\LogInController.js" />
-    <Content Include="wwwroot\ngApp\controllers\LoginModalController.js" />
     <Content Include="wwwroot\ngApp\templates\front.html" />
   </ItemGroup>
   <ItemGroup>
