@@ -5,6 +5,6 @@ namespace WorkOutous.Services
 {
     public interface ISearchExercisesService
     {
-         List<Exercises> GetExercises();
+        List<Exercises> GetExercises();
     }
 }

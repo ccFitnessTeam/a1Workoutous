@@ -15,7 +15,6 @@ namespace WorkOutous.Services
         {
             _repo = repo;
         }
-
         public Exercises GetExercises(string exercise, string muscle)
         {
             var ExerciseData = _repo.Query<Exercises>().Where(u => u.Exercise containing exercise) or Where(u => u.MuscelGroup containing muscle).ToList();

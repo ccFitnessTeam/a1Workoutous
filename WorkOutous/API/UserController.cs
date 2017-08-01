@@ -7,6 +7,8 @@ using WorkOutous.Services;
 using WorkOutous.Models;
 using WorkOutous.ViewModels;
 
+
+//
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WorkOutous.API
@@ -17,7 +19,7 @@ namespace WorkOutous.API
         IUserService _service;
         public UserController(Services.IUserService service)
         {
-           _service = service;
+            _service = service;
         }
         // GET: api/values
         [HttpGet]
@@ -52,6 +54,23 @@ namespace WorkOutous.API
         public void Delete(int id)
         {
         }
+
+        //[HttpGet]
+        //public AppUser GetUser([FromBody]LoginUser user)
+        //{
+        //    try
+        //    {
+        //        var AppUser = _service.GetAUser(user.UserName, user.Password);
+        //        return AppUser;
+        //    }
+        //    catch
+        //    {
+        //        AppUser NoLogin = new AppUser { };
+        //        NoLogin.UserName = "failure!";
+        //        return NoLogin;
+        //    }
+
+
+        //}
     }
 }
-
