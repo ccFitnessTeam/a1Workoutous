@@ -5,7 +5,7 @@ body {
     background-image: url("http://cdn-mf0.heartyhosting.com/sites/mensfitness.com/files/styles/wide_videos/public/1280-plates.jpg?itok=1cVfLPyi (92kB) ");
     padding: 0px;
     margin: 0px;
-    color : white;
+
 }
 
 /*NAV BACKGROUND COLOR*/
@@ -43,7 +43,18 @@ body {
     color: rgb(26, 182, 255);
 }
 
+/*NAV LINKS TO LEFT*/
+/*.left-nav{
+    float: left;
+    padding-left: none;
+}*/
 
+/*NAV LINKS TO RIGHT*/
+/*.right-nav{
+    float: right;
+    padding-right: 10px;
+    padding-left: 10px;
+}*/ 
 
 /*SCROLL BACK TO TOP BOTTON*/
 #topBtn {
@@ -81,47 +92,65 @@ footer {
 footer .title{
     font-size:50px;
 }
-/***********************************************LOGIN MODAL***********************************************/
-/*LOGO ON LOGIN PAGE*/
-.logo_on_login{
-   height: 100%;
-    width: 100%;
-}
 
-/*MAIN TEXT*/
-.main_text{
+/***********************************************FRONT PAGE***********************************************/
+
+.workout-placeholder{
     text-align: center;
-}
-/*MAIN TEXT HORIZONTAL LINES*/
-.main_text hr{
-    background-color: black;
-    height: 2px;
+    color: black;
+    background-color: grey;
+
 }
 
-.login_div{
-    text-align: center;
+#hhh{
+    width:100%;
 }
 
-#userErrMsg, #passErrMsg{
-    color: red;
+/*SEARCH BAR*/
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+    background-color: white;
+}
+
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.btn-group .form-horizontal .btn[type="submit"] {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.exercise-search-div {
+    border-radius: 10px;
+    background-color: white;
 }
 
 
 
-/***********************************************REGISTER MODAL***********************************************/
-/*rgba(255, 255, 255, .15);*/ 
-
-.modal {
-    max-height: 100%;
-    width: 100%;
-    margin: auto;
-    border-radius: 2px;
-    will-change: top, opacity;
-}
-
-/***********************************************FRONT MODAL***********************************************/
-
-.frontBody {
+/*.frontBody {
     background-image: url("http://cdn-mf0.heartyhosting.com/sites/mensfitness.com/files/styles/wide_videos/public/1280-plates.jpg?itok=1cVfLPyi (92kB) "); background-size: 100%;
     margin-top: -20px;
     margin-left: 2px;
@@ -156,4 +185,5 @@ footer .title{
 
 .progress {
     background: transparent;
-}
+}*/
+
