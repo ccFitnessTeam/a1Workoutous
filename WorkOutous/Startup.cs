@@ -38,6 +38,7 @@ namespace WorkOutous
 
             //add service
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ISearchExercisesService, SearchExercisesService>();
             services.AddScoped<IGenericRepository, GenericRepository>();
 
             var connection = Configuration["ConnectionStrings:DefaultConnection"];
@@ -68,6 +69,11 @@ namespace WorkOutous
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "SearchExercises",
+                    template: "api/{controller}/{action}/{id}",
+                    defaults: new { controller = "SearchExercises", action = "GetExercises", input = RouteParameter }
+                );
                 routes.MapRoute(
                     name: "ActionApi",
                     template: "api/{controller}/{action}/{id}",
