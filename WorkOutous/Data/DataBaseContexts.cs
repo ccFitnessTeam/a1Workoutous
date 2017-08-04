@@ -16,5 +16,8 @@ namespace WorkOutous.Data
         //add model for db migration
         public DbSet<AppUser> AppUser { get; set; }
         public DbSet<Exercises> Exercises { get; set; }
+        public DbSet<Wip> Wip { get; set; }
+        public DbSet<WipSet> WipSet { get; set; }
+        public DbSet<WipSet> wipSet { get; set; }
     }
 }
