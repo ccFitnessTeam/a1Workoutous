@@ -8,10 +8,9 @@ using WorkOutous.Data;
 namespace WorkOutous.Migrations
 {
     [DbContext(typeof(DataBaseContexts))]
-    [Migration("20170807200210_Init")]
-    partial class Init
+    partial class DataBaseContextsModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -51,6 +50,44 @@ namespace WorkOutous.Migrations
                     b.HasKey("ExerciseID");
 
                     b.ToTable("Exercises");
+                });
+
+            modelBuilder.Entity("WorkOutous.Models.WorkOut", b =>
+                {
+                    b.Property<int>("WorkOutId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("WorkOutName");
+
+                    b.HasKey("WorkOutId");
+
+                    b.ToTable("WorkOuts");
+                });
+
+            modelBuilder.Entity("WorkOutous.Models.WorkOutExercise", b =>
+                {
+                    b.Property<int>("WorkOutId");
+
+                    b.Property<int>("ExerciseId");
+
+                    b.HasKey("WorkOutId", "ExerciseId");
+
+                    b.HasIndex("ExerciseId");
+
+                    b.ToTable("WorkOutExercise");
+                });
+
+            modelBuilder.Entity("WorkOutous.Models.WorkOutExercise", b =>
+                {
+                    b.HasOne("WorkOutous.Models.Exercises", "Exercise")
+                        .WithMany("WorkOutExercises")
+                        .HasForeignKey("ExerciseId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("WorkOutous.Models.WorkOut", "WorkOut")
+                        .WithMany("WorkOutExercises")
+                        .HasForeignKey("WorkOutId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }
