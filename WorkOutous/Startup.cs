@@ -38,6 +38,7 @@ namespace WorkOutous
             //add service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<IExerciseService, ExerciseService>();
 
             var connection = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddEntityFrameworkSqlServer()

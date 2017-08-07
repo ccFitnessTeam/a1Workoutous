@@ -33,14 +33,41 @@ namespace WorkOutous.API
         public AppUser Find(string userName, string password)
         {
             AppUser data = new AppUser();
-            data = _service.GetAUser(userName, password);
+            data = _service.FindUser(userName, password);
             return data;
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public AppUser Post([FromBody]LoginUser loginUser)
         {
+            try
+            {
+                var user = _service.LogInUser(loginUser);
+                if(user.UserName == null || user.UserName == String.Empty)
+                {
+                    
+                    return user;
+                }
+                else
+                {
+                    return _service.FindUser(loginUser.UserName, loginUser.Password);
+                }
+            }
+            catch
+            {
+                BadRequest("runtime err");
+            }
+            return null;
+            
+        }
+
+        [Route("api/[controller]/Register")]
+        [HttpPost]
+        public AppUser Register([FromBody]RegisterUser ruser)
+        {
+            var user = _service.RegisterUser(ruser);
+            return user;
         }
 
         // PUT api/values/5

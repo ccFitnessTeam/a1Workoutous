@@ -1,80 +1,22 @@
-<h1>LOGIN PAGE</h1>
 
-<!--BODY DIV-->
-<div class=" body_div login_page">
-    <!--LOGO DIV-->
-    <div class="col-lg-4 col-xs-12">
-        <img class="logo_on_login" src="images/WorkoutousLogo.png"> 
-    </div>
-    <!--MAIN TEXT DIV-->
-    <div class="main_text col-lg-8 col-xs-12">
-        <h3>REGISTER to get the full benefits.</h3>
-        <hr />
-        <h3>VISITOR use the visitor option for a trial version.</h3>      
-        <hr />
-        <h3>
-            Workoutous will have you working out at your best. 
-            Build workouts, get motivation from friends, plan and achieve it.  
-            See yourself morphed into the body you want. 
-        </h3>
-    </div>
 
-    <!--LOGIN DIV-->
-    <div id="login_section" class="container login_div">   
-        <div class="col-lg-12 col-lg-offset-0 col-xs-12">
-            <form>                
-                <h2>Log In</h2>
-
-                <input id="Username" type="text" placeholder="Username" ng-model="vm.uname" required>                    
-                <p id="userErrMsg"></p>
-                <input id="Pwd" type="Password" placeholder="Password" ng-model="vm.pass" required>
-                <p id="passErrMsg"></p> 
-
-                <button class="" href="" ng-click="ctrl.loginValidation()">Sign In</button>
-
+<div class="col-lg-4 col-lg-offset-2">
+    <div class="panel">
+        <div class="panel-body">
+            <form ng-submit="ctrl.logIn(ctrl.username,ctrl.password)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input class="form-control" type="text" name="name" value="" ng-model="ctrl.username" required/>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="name" value="" ng-model="ctrl.password" required/>
+                </div>
+                <div>
+                    <input class="btn btn-primary" type="submit" name="name" value="Submit" />
+                </div>
             </form>
-                <button class="" href="">Visitor</button>
-                <button class="" ui-sref="register">Register</button>
+
         </div>
     </div>
-
-    <ul ng-repeat="user in vm.users">
-        <li>{{user.userId}}</li>
-        <li>{{user.firstName}}</li>
-        <li>{{user.lastName}}</li>
-        <li>{{user.email}}</li>
-        <li>{{user.userName}}</li>
-        <li>{{user.administrator}}</li>
-    </ul>
-
-    <ul ng-repeat="user in vm.users">
-        <li class="list-group-item">
-            {{user.firstName}}
-            <span class="pull-right">
-                <a href="#" class="glyphicon glyphicon-plus-sign" title="add"></a>
-                <a href="#" class="glyphicon glyphicon-pencil" title="edit"></a>
-                <a href="#" class="glyphicon glyphicon-trash" title="delete"></a>
-            </span>
-        </li>
-    </ul>
-
-   
-
-
-
-
 </div>
-
-
-<!-- <div class="nav col-lg-12 col-xs-12">
-    <nav>
-        <ul>
-            <li><a class="left-nav active" href="/login">Workoutous</a></li>
-            <li><a class="right-nav" href="/register">Register</a></li>
-            <li><a class="right-nav active" href="/login">Login</a></li>
-        </ul>
-    </nav>
-</div> -->
-
-
-
