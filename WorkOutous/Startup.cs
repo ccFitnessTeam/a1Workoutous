@@ -17,7 +17,6 @@ namespace WorkOutous
     public class Startup
     {
         private object RouteParameter;
-
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -39,6 +38,7 @@ namespace WorkOutous
             //add service
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGenericRepository, GenericRepository>();
+            services.AddScoped<IExerciseService, ExerciseService>();
 
             var connection = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddEntityFrameworkSqlServer()
@@ -72,11 +72,11 @@ namespace WorkOutous
                     name: "ActionApi",
                     template: "api/{controller}/{action}/{id}",
                     defaults: new { id = RouteParameter }
-                );
+               );
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-        });
+            });
         }
     }
 }
