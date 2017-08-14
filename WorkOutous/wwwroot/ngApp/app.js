@@ -30,10 +30,10 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             controller: RegisterController,
             controllerAs: 'ctrl'
         })
-        .state('front', {
-            url: '/front',
-            templateUrl: '/ngApp/templates/front.html',
-            controller: FrontController,
+        .state('addExercise', {
+            url: '/addExercise',
+            templateUrl: '/ngApp/templates/addExercise.html',
+            controller: ExerciseController,
             controllerAs: 'ctrl'
         })
         .state('exercises', {

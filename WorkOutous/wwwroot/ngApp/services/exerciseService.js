@@ -9,4 +9,8 @@ class ExerciseService {
     getAllExercises() {
        return this.http.get(this.resource);
     }
+
+    add(exercise){
+        this.http.post(this.resource, exercise);
+    }
 }
