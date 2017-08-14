@@ -23,7 +23,9 @@
     <Content Include="wwwroot\ngApp\controllers\controller.js" />
     <Content Include="wwwroot\ngApp\controllers\exerciseController.js" />
     <Content Include="wwwroot\ngApp\controllers\LogInController.js" />
+    <Content Include="wwwroot\ngApp\controllers\workoutController.js" />
     <Content Include="wwwroot\ngApp\services\exerciseService.js" />
+    <Content Include="wwwroot\ngApp\services\workoutService.js" />
     <Content Include="wwwroot\ngApp\templates\addExercise.html" />
     <Content Include="wwwroot\ngApp\templates\exercises.html" />
     <Content Include="wwwroot\ngApp\templates\front.html" />

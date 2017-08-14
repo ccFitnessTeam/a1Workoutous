@@ -38,7 +38,9 @@ namespace WorkOutous.Services
         {
             if(wo.WorkOutId == 0)
             {
+               
                 _repo.Add(wo);
+                
             }
             else
             {

@@ -4,10 +4,10 @@ var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
 //controller
 app.controller("Main", MainController).controller("Login", LogInController).controller("Register", RegisterController).controller("Front", FrontController);
-app.controller("ExerciseController", ExerciseController);
+app.controller("ExerciseController", ExerciseController).controller("WorkoutController",WorkoutController);
 
 //services
-app.service("$exercise", ExerciseService);
+app.service("$exercise", ExerciseService).service("$workout",WorkoutService);
 
 app.service("$mainService", MainService);
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
