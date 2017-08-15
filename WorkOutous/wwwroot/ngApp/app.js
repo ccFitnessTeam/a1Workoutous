@@ -2,13 +2,14 @@
 
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
-//controllers
-//app.controller("Main", MainController).controller("Login",LogInController).controller("Register", RegisterController).controller("Front", FrontController);
-app.controller("Main", MainController).controller("Login", LogInController);
+//controller
+app.controller("Main", MainController).controller("Login", LogInController).controller("Register", RegisterController).controller("Front", FrontController);
+app.controller("ExerciseController", ExerciseController).controller("WorkoutController",WorkoutController);
+
 //services
+app.service("$exercise", ExerciseService).service("$workout",WorkoutService);
 app.service("$mainService", MainService);
 
-//config
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
@@ -29,10 +30,22 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             controller: RegisterController,
             controllerAs: 'ctrl'
         })
-        .state('front', {
-            url: '/front',
-            templateUrl: '/ngApp/templates/front.html',
-            controller: FrontController,
+        .state('addExercise', {
+            url: '/addExercise',
+            templateUrl: '/ngApp/templates/addExercise.html',
+            controller: ExerciseController,
+            controllerAs: 'ctrl'
+        })
+        .state('exercises', {
+            url: '/exercises',
+            templateUrl: '/ngApp/templates/exercises.html',
+            controller: ExerciseController,
+            controllerAs: 'ctrl'
+        })
+        .state('addWorkout', {
+            url: '/addWorkout',
+            templateUrl: '/ngApp/templates/addWorkout.html',
+            controller: WorkoutController,
             controllerAs: 'ctrl'
         })
         .state('notFound', {

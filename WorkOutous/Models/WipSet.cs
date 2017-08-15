@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace WorkOutous.Models
 {
-    public class Exercises
+    public class WipSet
     {
         [Key]
-        public int ExerciseID { get; set; }
-        public string MuscelGroup { get; set; }
+        public string UserName { get; set; }
         public string Exercise { get; set; }
-        public List<WorkOutExercise> WorkOutExercises { get; set; }
     }
 }
