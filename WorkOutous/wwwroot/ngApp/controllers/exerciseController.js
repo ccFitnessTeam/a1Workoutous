@@ -1,9 +1,10 @@
 ﻿
 class ExerciseController{
-    constructor($exercise) {
+    constructor($exercise, $state) {
         this.exercises;
         this.$exerciseService = $exercise;
         this.getAll();
+        this.state = $state;
     }
 
     getAll() {
@@ -13,5 +14,6 @@ class ExerciseController{
     addExercise(exerciseName, muscelGroup) {
         var exerciseToAdd = { exercise: exerciseName, MuscelGroup: muscelGroup };
         this.$exerciseService.add(exerciseToAdd);
+        this.state.go("exercises");
     }
 }
