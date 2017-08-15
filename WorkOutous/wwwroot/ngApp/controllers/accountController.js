@@ -1,6 +1,6 @@
 ﻿
 class AccountController{
-    constructor($account) {
+    constructor($account,$state) {
         this.userLogin = {
             username: "",
             password:""
@@ -10,15 +10,26 @@ class AccountController{
             password: "",
             firstname: "",
             lastname: "",
-            email:  ""
+            email: "",
+            isAdmin: false
         };
         this.passConfirm;
         this.account = $account;
         this.user;
+        this.state = $state;
     }
 
     loginUser() {
-        this.account.login(this.userLogin).then((res) => { this.user = res.data; });
+        this.account.login(this.userLogin).then((res) => {
+            this.user = res.data;
+            
+            sessionStorage.setItem("userToken", this.user.userId);
+            sessionStorage.setItem("status", this.user.administrator);
+            sessionStorage.setItem("loggedin", "loggedin");
+
+        });
+        
+        this.state.go("home");
     }
 
     register() {
@@ -26,7 +37,20 @@ class AccountController{
         {
             alert("Comfirm Password invalid");
         }
-        else
-        this.account.register(this.userRegister).then((res) => { this.user = res.data; });
+        else {
+            this.account.register(this.userRegister).then((res) => { this.user = res.data; });
+
+        }
+        this.loginUser();
+        this.state.go("home");
+    }
+
+    logout() {
+        sessionStorage.clear();
+        this.state.go("home");
+    }
+
+    isLoggedin() {
+        return sessionStorage.getItem("loggedin") == "loggedin";
     }
 }
