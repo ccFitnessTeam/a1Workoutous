@@ -3,12 +3,12 @@
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
 //controller
-app.controller("Main", MainController).controller("Login", LogInController).controller("Register", RegisterController).controller("Front", FrontController);
-app.controller("ExerciseController", ExerciseController).controller("WorkoutController",WorkoutController);
+app.controller("Main", MainController).controller("Front", FrontController);
+app.controller("ExerciseController", ExerciseController).controller("WorkoutController", WorkoutController).controller("AccountController", AccountController);
 
 //services
-app.service("$exercise", ExerciseService).service("$workout",WorkoutService);
-app.service("$mainService", MainService);
+app.service("$exercise", ExerciseService).service("$workout", WorkoutService);
+app.service("$mainService", MainService).service("$account",AccountService);
 
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
@@ -21,13 +21,13 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
         .state('login', {
             url: '/login',
             templateUrl: '/ngApp/templates/login.html',
-            controller: LogInController,
+            controller: AccountController,
             controllerAs: 'ctrl'
         })
         .state('register', {
             url: '/register',
             templateUrl: '/ngApp/templates/register.html',
-            controller: RegisterController,
+            controller: AccountController,
             controllerAs: 'ctrl'
         })
         .state('addExercise', {
