@@ -1,0 +1,51 @@
+﻿
+<center><h2>Create a Workout</h2></center>
+<div class="col-sm-5 col-sm-offset-1">
+    <div class="panel">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Muscel Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="exercise in ctrl.exercises">
+                        <td style="font-size:1.6em;">
+                            {{exercise.exercise}}
+                        </td>
+                        <td style="font-size:1.6em;">
+                            {{exercise.muscelGroup}}
+                        </td>
+                        <td>
+                            <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ng-model="exercise" ng-click="ctrl.addToWorkOut(exercise)">+</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-sm-5 col-sm-offset-0">
+    <div class="panel">
+        <div class="panel-body">
+            <form ng-submit="ctrl.addWorkout()">
+                <div class="form-group">
+                    <label>Workout</label>
+                    <input type="text" class="form-control" ng-model="ctrl.workout.name" />
+                </div>
+
+                <ol style="font-size:1.6em;">
+                    <li ng-repeat="exercise in ctrl.workout.exercises" >{{exercise.exercise}}</li>
+                </ol>
+                <div>
+                    <button class="btn btn-danger" style="font-size:1.6em;" type="submit">Create Workout!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
