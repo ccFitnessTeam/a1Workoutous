@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+     <EnableDefaultContentItems>false</EnableDefaultContentItems>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
   </PropertyGroup>
 
@@ -27,6 +28,7 @@
     <Content Include="wwwroot\ngApp\services\exerciseService.js" />
     <Content Include="wwwroot\ngApp\services\workoutService.js" />
     <Content Include="wwwroot\ngApp\templates\addExercise.html" />
+    <Content Include="wwwroot\ngApp\templates\addWorkout.html" />
     <Content Include="wwwroot\ngApp\templates\exercises.html" />
     <Content Include="wwwroot\ngApp\templates\front.html" />
   </ItemGroup>

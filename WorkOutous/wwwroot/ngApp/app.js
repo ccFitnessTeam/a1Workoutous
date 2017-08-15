@@ -8,8 +8,8 @@ app.controller("ExerciseController", ExerciseController).controller("WorkoutCont
 
 //services
 app.service("$exercise", ExerciseService).service("$workout",WorkoutService);
-
 app.service("$mainService", MainService);
+
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
@@ -40,6 +40,12 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             url: '/exercises',
             templateUrl: '/ngApp/templates/exercises.html',
             controller: ExerciseController,
+            controllerAs: 'ctrl'
+        })
+        .state('addWorkout', {
+            url: '/addWorkout',
+            templateUrl: '/ngApp/templates/addWorkout.html',
+            controller: WorkoutController,
             controllerAs: 'ctrl'
         })
         .state('notFound', {

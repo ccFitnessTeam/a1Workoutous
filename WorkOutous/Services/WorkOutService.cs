@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WorkOutous.Models;
+using WorkOutous.ViewModels;
 
 namespace WorkOutous.Services
 {
@@ -34,18 +35,32 @@ namespace WorkOutous.Services
             return workout;
         }
 
-        public void CreateWorkOut(WorkOut wo)
+        public void CreateWorkOut(WorkOutVM wo)
         {
-            if(wo.WorkOutId == 0)
+            var workout = new WorkOut
             {
-               
-                _repo.Add(wo);
-                
+                WorkOutId = wo.Id,
+                WorkOutName = wo.Name
+            };
+
+            if (workout.WorkOutId == 0)
+            {
+                _repo.Add(workout);
             }
             else
             {
-                _repo.Update(wo);
+                _repo.Update(workout);
             }
+
+            foreach (var exercise in wo.Exercises)
+            {
+                var we = new WorkOutExercise();
+                we.ExerciseId = exercise.ExerciseID;
+                we.WorkOutId = workout.WorkOutId;
+                _repo.Add(we);
+            }
+            
+            
         }
 
         public void DeleteWorkout(int id)

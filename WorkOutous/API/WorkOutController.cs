@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WorkOutous.Models;
 using WorkOutous.Services;
+using WorkOutous.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,9 +35,16 @@ namespace WorkOutous.API
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]WorkOut workout)
+        public void Post([FromBody]WorkOutVM workout)
         {
-            
+            if(ModelState.IsValid)
+            {
+                _service.CreateWorkOut(workout);
+            }
+            else
+            {
+                BadRequest();
+            }
         }
 
         // PUT api/values/5
