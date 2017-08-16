@@ -29,16 +29,23 @@ namespace WorkOutous.API
         }
 
         // GET api/values/5
-        [HttpGet("{userName, password}")]
-        public AppUser Find(string userName, string password)
+        //[HttpGet("{id}")]
+        //public AppUser Find(string userName, string password)
+        //{
+        //    AppUser data = new AppUser();
+        //    data = _service.FindUser(userName, password);
+        //    return data;
+        //}
+
+        [HttpGet("{id}")]
+        public AppUser GetUser(int id)
         {
-            AppUser data = new AppUser();
-            data = _service.FindUser(userName, password);
-            return data;
+            var user = _service.GetAUser(id);
+            return user;
         }
 
         // POST api/values
-       
+
 
         // PUT api/values/5
         [HttpPut("{id}")]

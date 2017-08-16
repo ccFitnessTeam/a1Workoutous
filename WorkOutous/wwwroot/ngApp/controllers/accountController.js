@@ -33,7 +33,7 @@ class AccountController{
     }
 
     register() {
-        if (this.userRegister.password != this.passConfirm)
+        if (this.userRegister.password !== this.passConfirm)
         {
             alert("Comfirm Password invalid");
         }

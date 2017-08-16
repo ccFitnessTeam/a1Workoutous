@@ -25,12 +25,14 @@ namespace WorkOutous.Services
         {
             return _repo.Query<AppUser>().Where(u => u.UserName == username).Where(u => u.Password == password).FirstOrDefault();
         }
+
         //user by id
         public AppUser GetAUser(int id)
         {
             var user = _repo.Query<AppUser>().Where(u => u.UserId == id).FirstOrDefault();
             return user;
         }
+
         //log in user
        public AppUser LogInUser(LoginUser login)
         {

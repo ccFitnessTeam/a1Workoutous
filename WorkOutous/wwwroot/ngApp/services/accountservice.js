@@ -4,6 +4,7 @@ class AccountService{
         this.loginResource = "/api/account/login/";
         this.registerResource = "/api/account/register/";
         this.resource = "/api/account/";
+        this.userResource = "/api/user/";
         this.http = $http;
     }
 
@@ -17,5 +18,9 @@ class AccountService{
 
     getWorkOutsById(uid) {
         return this.http.get(this.resource + uid);
+    }
+
+    getUser(id) {
+        return this.http.get(this.userResource + id);
     }
 }

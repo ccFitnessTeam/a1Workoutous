@@ -75,7 +75,10 @@ namespace WorkOutous.Services
             var workouts = new List<WorkOut>();
             foreach (var uw in wos)
             {
-                var workout = _repo.Query<WorkOut>().Where(w => w.WorkOutId == uw.WorkoutId).FirstOrDefault();
+                var workout = _repo.Query<WorkOut>().Where(w => w.WorkOutId == uw.WorkoutId).Select(w => new WorkOut {
+                    WorkOutId = w.WorkOutId,
+                    WorkOutName = w.WorkOutName
+                }).FirstOrDefault();
                 workouts.Add(workout);
             }
 

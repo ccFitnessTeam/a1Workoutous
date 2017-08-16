@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\ngApp\controllers\controller.js" />
     <Content Include="wwwroot\ngApp\controllers\exerciseController.js" />
     <Content Include="wwwroot\ngApp\controllers\LogInController.js" />
     <Content Include="wwwroot\ngApp\controllers\workoutController.js" />

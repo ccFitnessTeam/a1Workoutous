@@ -17,9 +17,10 @@ namespace WorkOutous.API
     {
         public IUserService _service;
         public IWorkOutService _wservice;
-        public AccountController(IUserService service)
+        public AccountController(IUserService service, IWorkOutService wservice)
         {
             _service = service;
+            _wservice = wservice;
         }
 
         //not in use
