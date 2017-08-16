@@ -16,6 +16,10 @@ namespace WorkOutous.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public bool Administrator { get; set; }
+        public List<UserWorkouts> UserWorkouts { get; set; }
+        public string Bio { get; set; }
+        public string UserImage { get; set; }
+
 
 
 

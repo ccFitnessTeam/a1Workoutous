@@ -16,24 +16,29 @@ namespace WorkOutous.API
     public class AccountController : Controller
     {
         public IUserService _service;
-        public AccountController(IUserService service)
+        public IWorkOutService _wservice;
+        public AccountController(IUserService service, IWorkOutService wservice)
         {
             _service = service;
+            _wservice = wservice;
         }
 
-        // GET: api/values
+        //not in use
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        //not in use
         [HttpGet("{id}")]
-        public string Get(string id)
+        public List<WorkOut> Get(int id)
         {
-            return "value";
+            List<WorkOut> workouts = _wservice.GetWorkoutsByUser(id);
+            return workouts;
         }
+
+        //register user / create user in db
         [Route("register")]
         [HttpPost]
         public AppUser Register([FromBody]RegisterUser ruser)
@@ -41,7 +46,7 @@ namespace WorkOutous.API
             var user = _service.RegisterUser(ruser);
             return user;
         }
-
+        //auth user 
         [Route("login")]
         [HttpPost]
         public AppUser Login([FromBody]LoginUser luser)
@@ -54,13 +59,14 @@ namespace WorkOutous.API
             return user;
             
         }
-
+        //not in use
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
+        //not in use
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)

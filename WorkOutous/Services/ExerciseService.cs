@@ -14,10 +14,10 @@ namespace WorkOutous.Services
         {
             _repo = repo;
         }
-
-        public List<Exercises> GetAll()
+        //get all exercises out of db
+        public List<Exercise> GetAll()
         {
-            var exs = _repo.Query<Exercises>().ToList();
+            var exs = _repo.Query<Exercise>().ToList();
             return exs;
         }
 
@@ -46,20 +46,20 @@ namespace WorkOutous.Services
 
         public Exercises GetExercise(int id)
         {
-            var ex = _repo.Query<Exercises>().Where(e => e.ExerciseID == id).FirstOrDefault();
+            var ex = _repo.Query<Exercise>().Where(e => e.ExerciseId == id).FirstOrDefault();
             return ex;
         }
-
-        public void UpdateExercise(Exercises exercise)
+        //create a row for exercise or pdate row
+        public void UpdateExercise(Exercise exercise)
         {
-            if (exercise.ExerciseID == 0)
+            if (exercise.ExerciseId == 0)
             {
                 _repo.Add(exercise);
             }
             else
                 _repo.Update(exercise);
         }
-
+        //remove exercise from db by id
         public void RemoveExercise(int id)
         {
             var ex = GetExercise(id);

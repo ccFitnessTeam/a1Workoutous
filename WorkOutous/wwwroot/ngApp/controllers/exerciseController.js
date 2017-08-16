@@ -13,8 +13,8 @@ class ExerciseController {
         this.$exerciseService.getAllExercises().then((res) => { this.exercises = res.data; });
     }
 
-    addExercise(exerciseName, muscelGroup) {
-        var exerciseToAdd = { exercise: exerciseName, MuscelGroup: muscelGroup };
+    addExercise(exerciseName, muscleGroup) {
+        var exerciseToAdd = { name: exerciseName, MuscleGroup: muscleGroup };
         this.$exerciseService.add(exerciseToAdd);
         this.state.go("exercises");
     }

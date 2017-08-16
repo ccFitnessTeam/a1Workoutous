@@ -20,7 +20,7 @@ namespace WorkOutous.API
         }
         // GET: api/values
         [HttpGet]
-        public List<Exercises> Get()
+        public List<Exercise> Get()
         {
             return _service.GetAll();
         }
@@ -36,14 +36,14 @@ namespace WorkOutous.API
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Exercises Get(int id)
+        public Exercise Get(int id)
         {
             return _service.GetExercise(id);
         }
 
         // POST api/values
         [HttpPost]
-        public string Post([FromBody]Exercises exercise)
+        public string Post([FromBody]Exercise exercise)
         {
             try
             {

@@ -5,10 +5,9 @@ namespace WorkOutous.Services
 {
     public interface IExerciseService
     {
-        List<Exercises> GetAll();
-        List<Exercises> GetSomeExercises(string input);
-        Exercises GetExercise(int id);
+        List<Exercise> GetAll();
+        Exercise GetExercise(int id);
         void RemoveExercise(int id);
-        void UpdateExercise(Exercises exercise);
+        void UpdateExercise(Exercise exercise);
     }
 }

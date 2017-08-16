@@ -8,9 +8,10 @@ using WorkOutous.Data;
 namespace WorkOutous.Migrations
 {
     [DbContext(typeof(DataBaseContexts))]
-    partial class DataBaseContextsModelSnapshot : ModelSnapshot
+    [Migration("20170816040313_userToworkout")]
+    partial class userToworkout
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -23,8 +24,6 @@ namespace WorkOutous.Migrations
 
                     b.Property<bool>("Administrator");
 
-                    b.Property<string>("Bio");
-
                     b.Property<string>("Email");
 
                     b.Property<string>("FirstName");
@@ -32,8 +31,6 @@ namespace WorkOutous.Migrations
                     b.Property<string>("LastName");
 
                     b.Property<string>("Password");
-
-                    b.Property<string>("UserImage");
 
                     b.Property<string>("UserName");
 

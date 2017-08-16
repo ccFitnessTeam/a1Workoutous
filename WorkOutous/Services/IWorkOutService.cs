@@ -11,5 +11,6 @@ namespace WorkOutous.Services
         List<WorkOutNames> GetSomeWorkOuts(string input);
         List<WorkOut> GetAllWorkOuts();
         WorkOut GetById(int id);
+        List<WorkOut> GetWorkoutsByUser(int uId);
     }
 }

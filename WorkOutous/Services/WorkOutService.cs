@@ -22,7 +22,7 @@ namespace WorkOutous.Services
             _repo = repo;
 
         }
-        
+        //get all workouts
         public List<WorkOut> GetAllWorkOuts()
         {
             return _repo.Query<WorkOut>().ToList();
@@ -57,7 +57,7 @@ namespace WorkOutous.Services
 
             return workout;
         }
-
+        //create or update workout
         public void CreateWorkOut(WorkOutVM wo)
         {
             var workout = new WorkOut
@@ -78,18 +78,34 @@ namespace WorkOutous.Services
             foreach (var exercise in wo.Exercises)
             {
                 var we = new WorkOutExercise();
-                we.ExerciseId = exercise.ExerciseID;
+                we.ExerciseId = exercise.ExerciseId;
                 we.WorkOutId = workout.WorkOutId;
                 _repo.Add(we);
             }
             
             
         }
-
+        //remove workout by id
         public void DeleteWorkout(int id)
         {
             var workout = GetById(id);
             _repo.Delete(workout);
+        }
+        //get workouts by user id 
+        public List<WorkOut> GetWorkoutsByUser(int uId)
+        {
+            var wos = _repo.Query<UserWorkouts>().Where(u => u.AppUserId == uId).ToList();
+            var workouts = new List<WorkOut>();
+            foreach (var uw in wos)
+            {
+                var workout = _repo.Query<WorkOut>().Where(w => w.WorkOutId == uw.WorkoutId).Select(w => new WorkOut {
+                    WorkOutId = w.WorkOutId,
+                    WorkOutName = w.WorkOutName
+                }).FirstOrDefault();
+                workouts.Add(workout);
+            }
+
+            return workouts;
         }
     }
 }

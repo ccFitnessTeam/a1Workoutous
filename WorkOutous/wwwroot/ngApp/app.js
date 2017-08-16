@@ -3,7 +3,7 @@
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
 //controller
-app.controller("Main", MainController).controller("Front", FrontController);
+app.controller("Main", MainController).controller("Front", FrontController).controller("ProfileController", ProfileController);
 app.controller("ExerciseController", ExerciseController).controller("WorkoutController", WorkoutController).controller("AccountController", AccountController);
 
 //services
@@ -46,6 +46,12 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             url: '/addWorkout',
             templateUrl: '/ngApp/templates/addWorkout.html',
             controller: WorkoutController,
+            controllerAs: 'ctrl'
+        })
+        .state('userPage', {
+            url: '/userPage',
+            templateUrl: '/ngApp/templates/userPage.html',
+            controller: ProfileController,
             controllerAs: 'ctrl'
         })
         .state('notFound', {
