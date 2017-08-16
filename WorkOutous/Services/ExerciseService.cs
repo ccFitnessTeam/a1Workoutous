@@ -21,6 +21,29 @@ namespace WorkOutous.Services
             return exs;
         }
 
+        public List<Exercises> GetSomeExercises(string input)
+        {
+            List<Exercises> OutputList = new List<Exercises>();
+            var Etable = _repo.Query<Exercises>();
+            var Sought =
+                      from e in Etable.AsQueryable().Where(x => (x.MuscelGroup.Contains(input)) || (x.Exercise.Contains(input)))
+                      select new
+                      {
+                          e.ExerciseID,
+                          e.MuscelGroup,
+                          e.Exercise
+                      };
+            foreach (var item in Sought)
+            {
+                Exercises temp = new Exercises();
+                temp.ExerciseID = item.ExerciseID;
+                temp.MuscelGroup = item.MuscelGroup;
+                temp.Exercise = item.Exercise;
+                OutputList.Add(temp);
+            }
+            return OutputList;
+        }
+
         public Exercises GetExercise(int id)
         {
             var ex = _repo.Query<Exercises>().Where(e => e.ExerciseID == id).FirstOrDefault();

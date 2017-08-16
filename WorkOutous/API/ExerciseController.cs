@@ -25,6 +25,15 @@ namespace WorkOutous.API
             return _service.GetAll();
         }
 
+        // GET: api/Exercises/input
+        [HttpGet("GetExercises")]
+        public List<Exercises> GetExercises(string input)
+        {
+            List<Exercises> exercisedata = new List<Exercises>();
+            exercisedata = _service.GetSomeExercises(input);
+            return exercisedata;
+        }
+
         // GET api/values/5
         [HttpGet("{id}")]
         public Exercises Get(int id)

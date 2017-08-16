@@ -2,10 +2,22 @@
 <h1>Exercises</h1>
 <a class="btn btn-danger" ui-sref="addExercise">Add Exercise</a>
 
-Search: <input type="text" name="name" value="" /> 
+Search: <input id="ExerciseSearch" type="text" name="input" value="" ng-model="input" ng-change="ctrl.doSearch(input)" />
 
 
-    <ul ng-repeat="ex in ctrl.exercises">
-        <li>{{ex.exercise}}</li>
-        <li>{{ex.muscelGroup}}</li>
-    </ul>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Exercise</th>
+                <th>Muscle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="ex in ctrl.exercises">
+                <td>{{ex.exercise}}</td>
+                <td>{{ex.muscelGroup}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -10,11 +10,11 @@ class MainController {
 
         this.stuff;
         //example of http request 
-        this.http.get("/api/values").then((res) => { this.stuff = res.data });
+        this.http.get("/api/values").then((res) => { this.stuff = res.data; });
         //using main service
         this.users;
         this.main = $mainService;
-        this.main.getUsers().then((res) => { this.users = res.data });
+        this.main.getUsers().then((res) => { this.users = res.data; });
     }
 }
 
