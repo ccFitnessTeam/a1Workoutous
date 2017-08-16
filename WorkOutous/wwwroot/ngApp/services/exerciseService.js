@@ -5,6 +5,9 @@ class ExerciseService {
         this.resource = "api/exercise/";
 
     }
+    getSomeExercises(input) {
+        return this.http.get(this.resource + "GetExercises/?input=" + input);
+    }
 
     getAllExercises() {
        return this.http.get(this.resource);

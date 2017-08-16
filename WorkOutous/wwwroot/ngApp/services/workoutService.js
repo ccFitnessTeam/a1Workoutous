@@ -10,8 +10,12 @@ class WorkoutService {
         this.http.get(this.resource);
     }
 
+    getSomeWorkouts(input) {
+        return this.http.get(this.resource + "GetWorkOuts/?input=" + input);
+    }
+
     getById(id) {
-        this.http.get(this.resource + id)
+        this.http.get(this.resource + id);
     }
 
     add(workout) {
@@ -19,6 +23,6 @@ class WorkoutService {
     }
 
     remove(id) {
-        this.http.delete(this.resource + id)
+        this.http.delete(this.resource + id);
     }
 }

@@ -9,6 +9,11 @@ using WorkOutous.ViewModels;
 
 namespace WorkOutous.Services
 {
+    public class WorkOutNames
+    {
+        public string WorkOutName;
+    }
+
     public class WorkOutService : IWorkOutService
     {
         public IGenericRepository _repo;
@@ -23,6 +28,24 @@ namespace WorkOutous.Services
             return _repo.Query<WorkOut>().ToList();
         }
 
+        public List<WorkOutNames> GetSomeWorkOuts(string input)
+        {
+            List<WorkOutNames> OutputList = new List<WorkOutNames>();
+            var Etable = _repo.Query<WorkOut>();
+            var Sought =
+                      from e in Etable.AsQueryable().Where(x => (x.WorkOutName.Contains(input)))
+                      select new
+                      {
+                          e.WorkOutName
+                      };
+            foreach (var item in Sought)
+            {
+                WorkOutNames temp = new WorkOutNames();
+                temp.WorkOutName = item.WorkOutName;
+                OutputList.Add(temp);
+            }
+            return OutputList;
+        }
         public WorkOut GetById(int id)
         {
             var workout = _repo.Query<WorkOut>().Where(w => w.WorkOutId == id).Include(w => w.WorkOutExercises).FirstOrDefault();
