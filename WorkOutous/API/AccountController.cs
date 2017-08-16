@@ -34,8 +34,7 @@ namespace WorkOutous.API
         {
             return "value";
         }
-
-        [Route("api/[controller]/register")]
+        [Route("register")]
         [HttpPost]
         public AppUser Register([FromBody]RegisterUser ruser)
         {
@@ -43,7 +42,7 @@ namespace WorkOutous.API
             return user;
         }
 
-        [Route("api/[controller]/login")]
+        [Route("login")]
         [HttpPost]
         public AppUser Login([FromBody]LoginUser luser)
         {

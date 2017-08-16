@@ -21,7 +21,7 @@
 
 </head>
 
-<body ng-controller="Main as vm">
+<body ng-controller="AccountController as vm">
     <!--NAV-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -32,22 +32,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ui-sref="home">Brand</a>
+                <a class="navbar-brand" ui-sref="home">Workout.us</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav">
-                    <li ><a ui-sref="home">Home <span class="sr-only">(current)</span></a></li>
-                    <li><a ui-sref="exercises">Exercises</a></li>
-                    <li><a ui-sref="login">Log In</a></li>
-                   
+                    <li ><a ng-show="vm.isLoggedin()"ui-sref="home">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a ng-show="vm.isLoggedin()" ui-sref="exercises">Exercises</a></li>
+                    
                 </ul>
-               
+                <ul class="nav navbar-nav pull-right">
+                    <li><a ng-show="!vm.isLoggedin()" ui-sref="login">Log In</a></li>
+                    <li><a ng-show="vm.isLoggedin()" href="#" ng-click="vm.logout()">Log Out</a></li>
+                </ul>
             </div>
         </div>
     </nav>
     <!----->
-    <a ui-sref="addWorkout" class="btn btn-default">Create Workout</a>
+    
 
 
     <div class="container">
@@ -72,6 +74,8 @@
     <script src="~/ngApp/services/exerciseService.js"></script>
     <script src="~/ngApp/controllers/workoutController.js"></script>
     <script src="~/ngApp/services/workoutService.js"></script>
+    <script src="~/ngApp/services/accountservice.js"></script>
+    <script src="~/ngApp/controllers/accountController.js"></script>
 
     <!--angular app-->
     <script src="~/ngApp/app.js"></script>
