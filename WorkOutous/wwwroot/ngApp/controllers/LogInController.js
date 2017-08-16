@@ -1,5 +1,5 @@
 ﻿
-class LogInController {
+class LoginController {
     constructor() {
         this.loginCred = {
             userName: "",
