@@ -8,9 +8,10 @@ using WorkOutous.Data;
 namespace WorkOutous.Migrations
 {
     [DbContext(typeof(DataBaseContexts))]
-    partial class DataBaseContextsModelSnapshot : ModelSnapshot
+    [Migration("20170816042423_updatUser")]
+    partial class updatUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")

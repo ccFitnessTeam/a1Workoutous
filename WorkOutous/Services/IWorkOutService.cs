@@ -10,5 +10,6 @@ namespace WorkOutous.Services
         void DeleteWorkout(int id);
         List<WorkOut> GetAllWorkOuts();
         WorkOut GetById(int id);
+        List<WorkOut> GetWorkoutsByUser(int uId);
     }
 }

@@ -10,5 +10,6 @@ namespace WorkOutous.Models
         public int WorkOutId { get; set; }
         public string WorkOutName { get; set; }
         public List<WorkOutExercise> WorkOutExercises { get; set; }
+        public List<UserWorkouts> UserWorkouts { get; set; }
     }
 }
