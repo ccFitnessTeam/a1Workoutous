@@ -10,13 +10,13 @@ Search: <input id="ExerciseSearch" type="text" name="input" value="" ng-model="i
         <thead>
             <tr>
                 <th>Exercise</th>
-                <th>Muscle</th>
+                <th>Muscle Group</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="ex in ctrl.exercises">
-                <td>{{ex.exercise}}</td>
-                <td>{{ex.muscelGroup}}</td>
+                <td>{{ex.name}}</td>
+                <td>{{ex.muscleGroup}}</td>
             </tr>
         </tbody>
     </table>

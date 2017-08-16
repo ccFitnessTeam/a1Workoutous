@@ -8,6 +8,7 @@ namespace WorkOutous.Services
         List<Exercise> GetAll();
         Exercise GetExercise(int id);
         void RemoveExercise(int id);
+        List<Exercise> GetSomeExercises(string input);
         void UpdateExercise(Exercise exercise);
     }
 }

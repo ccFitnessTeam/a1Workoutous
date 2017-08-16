@@ -21,30 +21,30 @@ namespace WorkOutous.Services
             return exs;
         }
 
-        public List<Exercises> GetSomeExercises(string input)
+        public List<Exercise> GetSomeExercises(string input)
         {
-            List<Exercises> OutputList = new List<Exercises>();
-            var Etable = _repo.Query<Exercises>();
+            List<Exercise> OutputList = new List<Exercise>();
+            var Etable = _repo.Query<Exercise>();
             var Sought =
-                      from e in Etable.AsQueryable().Where(x => (x.MuscelGroup.Contains(input)) || (x.Exercise.Contains(input)))
+                      from e in Etable.AsQueryable().Where(x => (x.MuscleGroup.Contains(input)) || (x.Name.Contains(input)))
                       select new
                       {
-                          e.ExerciseID,
-                          e.MuscelGroup,
-                          e.Exercise
+                          e.ExerciseId,
+                          e.MuscleGroup,
+                          e.Name
                       };
             foreach (var item in Sought)
             {
-                Exercises temp = new Exercises();
-                temp.ExerciseID = item.ExerciseID;
-                temp.MuscelGroup = item.MuscelGroup;
-                temp.Exercise = item.Exercise;
+                Exercise temp = new Exercise();
+                temp.ExerciseId = item.ExerciseId;
+                temp.MuscleGroup = item.MuscleGroup;
+                temp.Name = item.Name;
                 OutputList.Add(temp);
             }
             return OutputList;
         }
 
-        public Exercises GetExercise(int id)
+        public Exercise GetExercise(int id)
         {
             var ex = _repo.Query<Exercise>().Where(e => e.ExerciseId == id).FirstOrDefault();
             return ex;
