@@ -1,32 +1,50 @@
 ﻿
-<center><h2>Create a Workout</h2></center>
-<div class="col-sm-5 col-sm-offset-1">
-    <div class="panel">
-        <div class="panel-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Exercise</th>
-                        <th>Muscel Group</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="exercise in ctrl.exercises">
-                        <td style="font-size:1.6em;">
-                            {{exercise.exercise}}
-                        </td>
-                        <td style="font-size:1.6em;">
-                            {{exercise.muscelGroup}}
-                        </td>
-                        <td>
-                            <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ng-model="exercise" ng-click="ctrl.addToWorkOut(exercise)">+</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<h1>FRONT PAGE</h1>
+<!--BODY DIV-->
+<div class="body_div front_page">
+
+
+
+
+    <div class="col-lg-4 col-lg-push-4" ng-controller="frontController">
+        <input type="text" placeholder="Exercise Name" ng-model="current.name" value="{{current.exercise}}">
+        <input type="text" placeholder="Description" ng-model="current.description" value="{{current.description}}">
+
+        <a href="#" ng-click="addExercise(current)">Add</a> |
+        <a href="#" ng-click="saveChanges(current)">Save Changes</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>EXERCISE</th>
+                    <th>DESCRIPTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="exercise in exercises">
+                    <td>{{exercise.name}}</td>
+                    <td>{{exercise.description}}</td>
+                    <td><a href="#" ng-click="editExercise(exercise)">Edit</a> | <a href="#" ng-click="deleteExercise(exercise)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -10,7 +10,17 @@ class ExerciseService {
        return this.http.get(this.resource);
     }
 
-    add(exercise){
-        this.http.post(this.resource, exercise);
+    addToExercise(exercise){
+        this.http.post(this.resource, exercise );
     }
+
+    removeExercise(id) {
+        this.http.delete(this.resource + id);
+    }
+
+    getExerciseById(id) {
+        return this.http.get(this.resource + id);
+    }
+
+
 }

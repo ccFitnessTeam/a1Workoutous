@@ -1,11 +1,45 @@
 ﻿
-<h1>Exercises</h1>
-<a class="btn btn-danger" ui-sref="addExercise">Add Exercise</a>
+<center><h2>Edit your Exercises</h2></center>
+<div class="col-sm-5 col-sm-offset-1">
+    <div class="panel">
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Exercise</th>
+                        <th>Muscel Group</th>
+                        <th><button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ui-sref="addExercise({id:exercise.exerciseID})" ng-model="exercise" ng-click="ctrl.addToExercise(exercise)">New Exercise</button></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="exercise in ctrl.exercises">
+                        <td style="font-size:1.6em;">
+                            {{exercise.exercise}}
+                        </td>
+                        <td style="font-size:1.6em;">
+                            {{exercise.muscelGroup}}
+                        </td>
+                        <td>
+                            <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right"  ui-sref="deleteExercise({id:exercise.exerciseID})">Remove</button>
+                        </td>
+                        <td>
+                            <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ui-sref="editExercise({id:exercise.exerciseID})">Edit</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-Search: <input type="text" name="name" value="" /> 
 
 
-    <ul ng-repeat="ex in ctrl.exercises">
-        <li>{{ex.exercise}}</li>
-        <li>{{ex.muscelGroup}}</li>
-    </ul>
+
+
+<!--Search: <input type="text" name="name" value="" />-->
+
+
+<!--<ul ng-repeat="ex in ctrl.exercises">
+    <li>{{ex.exercise}}</li>
+    <li>{{ex.muscelGroup}}</li>
+</ul>-->

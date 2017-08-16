@@ -3,8 +3,8 @@
 var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 
 //controller
-app.controller("Main", MainController).controller("Login", LogInController).controller("Register", RegisterController).controller("Front", FrontController);
-app.controller("ExerciseController", ExerciseController).controller("WorkoutController",WorkoutController);
+app.controller("Main", MainController).controller("Register", RegisterController).controller("Front", FrontController);
+app.controller("ExerciseController", ExerciseController).controller("WorkoutController", WorkoutController).controller("EditController", EditController).controller("DeleteContoller",DeleteController);
 
 //services
 app.service("$exercise", ExerciseService).service("$workout",WorkoutService);
@@ -21,13 +21,11 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
         .state('login', {
             url: '/login',
             templateUrl: '/ngApp/templates/login.html',
-            controller: LogInController,
             controllerAs: 'ctrl'
         })
         .state('register', {
             url: '/register',
             templateUrl: '/ngApp/templates/register.html',
-            controller: RegisterController,
             controllerAs: 'ctrl'
         })
         .state('addExercise', {
@@ -48,6 +46,19 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             controller: WorkoutController,
             controllerAs: 'ctrl'
         })
+        .state('editExercise', {
+            url: '/editExercise/:id',
+            templateUrl: '/ngApp/templates/editExercise.html',
+            controller: EditController,
+            controllerAs: 'ctrl'
+        })
+        .state('deleteExercise', {
+            url: '/deleteExercise/:id',
+            templateUrl: '/ngApp/templates/deleteExercise.html',
+            controller: DeleteController,
+            controllerAs: 'ctrl'
+        })
+        
         .state('notFound', {
             url: '/notFound',
             templateUrl: '/ngApp/views/notFound.html'

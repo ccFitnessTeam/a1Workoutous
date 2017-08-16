@@ -21,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\ngApp\controllers\controller.js" />
     <Content Include="wwwroot\ngApp\controllers\exerciseController.js" />
     <Content Include="wwwroot\ngApp\controllers\LogInController.js" />
     <Content Include="wwwroot\ngApp\controllers\workoutController.js" />
@@ -30,7 +29,7 @@
     <Content Include="wwwroot\ngApp\templates\addExercise.html" />
     <Content Include="wwwroot\ngApp\templates\addWorkout.html" />
     <Content Include="wwwroot\ngApp\templates\exercises.html" />
-    <Content Include="wwwroot\ngApp\templates\front.html" />
+    <Content Include="wwwroot\ngApp\templates\updateExercise.html" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
