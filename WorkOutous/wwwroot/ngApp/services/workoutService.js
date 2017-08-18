@@ -19,7 +19,7 @@ class WorkoutService {
     }
 
     add(workout) {
-        this.http.post(this.resource, workout);
+       return this.http.post(this.resource, workout);
     }
 
     remove(id) {

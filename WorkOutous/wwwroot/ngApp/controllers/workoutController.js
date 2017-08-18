@@ -1,10 +1,11 @@
 ﻿
 class WorkoutController {
-    constructor($workout, $exercise) {
+    constructor($workout, $exercise, $state) {
         this.exerciseService = $exercise;
         this.getAllExercises();
         this.workoutService = $workout;
         this.input;
+        this.state = $state;
 
         this.workout = {
             name: "",
@@ -29,7 +30,10 @@ class WorkoutController {
     addWorkout() {
         this.workout.userId = sessionStorage.getItem("userToken");
         console.log(this.workout);
-        this.workoutService.add(this.workout);
+        this.workoutService.add(this.workout).then((res) => {
+            this.state.go("userPage");
+        });
+        this.getAllWorkouts();
     }
 
     doSearch(input) {
