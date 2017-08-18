@@ -1,37 +1,120 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+
+body {
+    
+    font-family: 'Sarpanch', sans-serif;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+
+div.stars {
+  width: 270px;
+  display: inline-block;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 10px;
+  font-size: 36px;
+  color: #444;
+  transition: all .2s;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family: FontAwesome;
+}
+#landing {
+    min-height: 100%;
+    min-width: 1024px;
+    /* Set up proportionate scaling */
     width: 100%;
+    height: auto;
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:-1;
+}
+#landingText {
+    font-size: 7em;
+    text-align: center;
+    position: absolute;
+    top: 71%;
+    left: 50%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+    color: darkslategray;
+    font-family: 'Emblema One', cursive;
+}
+#landingBody{
+    background-color:black;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+#landingText:hover {
+    color: #e60000;
+    text-shadow: 1px 6px 5px #ffff4d;
+}
+
+#homeMain1 {
+    background-image: url('../images/dumbbells_fitness_gym_113149_2048x1152.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center left;
+    height: 350px;
+    margin-top:-10%;
+}
+
+span {
+    margin: auto 0;
+    display: block;
+}
+#homeMainText {
+    margin-top:10%;
+    font-size: 5em;
+    font-family: 'Emblema One', cursive;
+}
+
+.triPanel{
+    min-height:500px;
+    margin-top:5%;
+    font-size:1.2em;
+}
+
+#homeMain2 {
+  
+    width:100%;
+    height:auto;
+    margin-top:-5%;
+}
+.lItem{
+    font-size:2em;
+    display:inline;
+    list-style:none;
+    margin-left:4%;
+    margin-right:4%;
+}
+
+/*.panel {
+    min-height: 300px;
+}*/
+
+.panel-body {
+    min-height: 200px;
 }

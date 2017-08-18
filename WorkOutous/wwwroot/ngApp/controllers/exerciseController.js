@@ -6,7 +6,7 @@ class ExerciseController {
         this.getAll();
         this.state = $state;
         this.input;
-        
+        this.muscleGroups = ["Pectorials","Lats", "Deltoids", "Quads", "Biceps", "Shoulders", "Triceps" ];
     }
 
     getAll() {

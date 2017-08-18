@@ -36,18 +36,26 @@ namespace WorkOutous.Services
         //log in user
        public AppUser LogInUser(LoginUser login)
         {
-            var user = _repo.Query<AppUser>().Where(u => u.UserName == login.UserName).FirstOrDefault();
-            
-
-            if (user.Password == login.Password)
+            try
             {
-                var userInfo = GetByUserName(user.UserName);
-                return userInfo;
+                var user = _repo.Query<AppUser>().Where(u => u.UserName == login.UserName).FirstOrDefault();
+
+
+                if (user.Password == login.Password)
+                {
+                    var userInfo = GetByUserName(user.UserName);
+                    return userInfo;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
+            catch
             {
                 return null;
             }
+            
         }
 
         public AppUser GetByUserName(string username)

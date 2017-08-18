@@ -1,8 +1,8 @@
 ﻿
 <center><h2>Create a Workout</h2></center>
-Search Exercises: <input id="ExerciseSearch" type="text" name="input" value="" ng-model="input" ng-change="ctrl.doSearch(input)" />
 <div class="col-sm-5 col-sm-offset-1">
-    <div class="panel">
+    <div class="panel" style="padding:2%; font-size:1.6em;">
+        <input id="ExerciseSearch" placeholder="Search Exercises" class="form-control" type="text" name="input" value="" ng-model="input" ng-change="ctrl.doSearch(input)" />
         <div class="panel-body">
             <table class="table table-hover">
                 <thead>
@@ -13,14 +13,14 @@ Search Exercises: <input id="ExerciseSearch" type="text" name="input" value="" n
                 </thead>
                 <tbody>
                     <tr ng-repeat="exercise in ctrl.exercises">
-                        <td style="font-size:1.6em;">
-                            {{exercise.exercise}}
+                        <td>
+                            {{exercise.name}}
                         </td>
-                        <td style="font-size:1.6em;">
-                            {{exercise.muscelGroup}}
+                        <td >
+                            {{exercise.muscleGroup}}
                         </td>
                         <td>
-                            <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ng-model="exercise" ng-click="ctrl.addToWorkOut(exercise)">+</button>
+                            <button style=" border-radius:45px; " class="btn btn-danger " ng-model="exercise" ng-click="ctrl.addToWorkOut(exercise)">+</button>
                         </td>
                     </tr>
                 </tbody>
@@ -40,12 +40,10 @@ Search Exercises: <input id="ExerciseSearch" type="text" name="input" value="" n
                     <input type="text" class="form-control" ng-model="ctrl.workout.name" ng-change="ctrl.doSearchWorkOut(input)" />
                 </div>
 
-                <ul style="font-size:1.6em;">
-                    <li ng-repeat="exercise in ctrl.workout.exercises" >{{exercise.exercise}}</li>
-                    <li ng-repeat="workOut in ctrl.workOut">{{workOut.workOutName}}
-                        <button style="font-size:1em; border-radius:45px; " class="btn btn-danger " ng-model="workOut.workOutName" ng-click="ctrl.setWorkOut(workOut.workOutName)">=</button>
-                    </li>
-                </ul>
+                <ol style="font-size:1.6em;">
+                    <li ng-repeat="exercise in ctrl.workout.exercises" >{{exercise.name}}</li>
+                   
+                </ol>
                 <div>
                     <button class="btn btn-danger" style="font-size:1.6em;" type="submit">Create Workout!</button>
                 </div>

@@ -5,7 +5,7 @@ var app = angular.module("WorkOutous", ['ui.router', 'ngResource']);
 //controller
 app.controller("Main", MainController).controller("Front", FrontController).controller("ProfileController", ProfileController);
 app.controller("ExerciseController", ExerciseController).controller("WorkoutController", WorkoutController).controller("AccountController", AccountController);
-
+app.controller("EditExerciseController", EditExerciseController).controller("DeleteExerciseController", DeleteExerciseController);
 //services
 app.service("$exercise", ExerciseService).service("$workout", WorkoutService);
 app.service("$mainService", MainService).service("$account",AccountService);
@@ -13,7 +13,7 @@ app.service("$mainService", MainService).service("$account",AccountService);
 app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
         .state('home', {
-            url: '/',
+            url: '/home',
             templateUrl: '/ngApp/templates/home.html',
             controller: MainController,
             controllerAs:"ctrl"
@@ -52,6 +52,24 @@ app.config(function ($stateProvider, $httpProvider, $urlRouterProvider, $locatio
             url: '/userPage',
             templateUrl: '/ngApp/templates/userPage.html',
             controller: ProfileController,
+            controllerAs: 'ctrl'
+        })
+        .state('editExercise', {
+            url: '/editExercise/:id',
+            templateUrl: '/ngApp/templates/editExercise.html',
+            controller: EditExerciseController,
+            controllerAs: 'ctrl'
+        })
+        .state('deleteExercise', {
+            url: '/deleteExercise/:id',
+            templateUrl: '/ngApp/templates/deleteExercise.html',
+            controller: DeleteExerciseController,
+            controllerAs: 'ctrl'
+        })
+        .state('landingPage', {
+            url: '/',
+            templateUrl: '/ngApp/templates/landingPage.html',
+            controller: AccountController,
             controllerAs: 'ctrl'
         })
         .state('notFound', {

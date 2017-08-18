@@ -17,19 +17,27 @@ class AccountController{
         this.account = $account;
         this.user;
         this.state = $state;
+        
     }
 
     loginUser() {
         this.account.login(this.userLogin).then((res) => {
             this.user = res.data;
-            
-            sessionStorage.setItem("userToken", this.user.userId);
-            sessionStorage.setItem("status", this.user.administrator);
-            sessionStorage.setItem("loggedin", "loggedin");
+            var isNotEmpty = this.user !== "";
+            if (isNotEmpty)
+            {
+                sessionStorage.setItem("userToken", this.user.userId);
+                sessionStorage.setItem("status", this.user.administrator);
+                sessionStorage.setItem("loggedin", "loggedin");
+                this.state.go("home");
+            }
+            else {
+                alert("Failed to sign in.");
+                this.state.go("login");
+            }
 
         });
-        
-        this.state.go("home");
+       
     }
 
     register() {
@@ -53,4 +61,7 @@ class AccountController{
     isLoggedin() {
         return sessionStorage.getItem("loggedin") == "loggedin";
     }
+
+    
 }
+

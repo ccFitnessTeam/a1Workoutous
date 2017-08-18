@@ -1,22 +1,34 @@
 ﻿
-<h1>Exercises</h1>
-<a class="btn btn-danger" ui-sref="addExercise">Add Exercise</a>
 
-Search: <input id="ExerciseSearch" type="text" name="input" value="" ng-model="input" ng-change="ctrl.doSearch(input)" />
 
 
 <div class="container">
+    <p style="font-size:2em;">My Exercises</p>
+    <div class="panel" style="padding:2%;">
+        <a class="btn btn-danger" ui-sref="addExercise">Add Exercise</a>
+       <input class="form-control" style="max-width:400px; display:inline; margin-left:2%;" placeholder="Search Exercises" id="ExerciseSearch" type="text" name="input" value="" ng-model="input" ng-change="ctrl.doSearch(input)" />
+        <select style="margin-left:3%;" class="btn btn-default"  ng-model="mg" ng-change="ctrl.doSearch(mg)">
+            <option value=""></option>
+            <option ng-repeat="mg in ctrl.muscleGroups">{{mg}}</option>
+        </select>
+    </div>
     <table class="table table-striped">
-        <thead>
+        <thead style="font-size:1.5em;">
             <tr>
                 <th>Exercise</th>
                 <th>Muscle Group</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="font-size:1.5em;">
             <tr ng-repeat="ex in ctrl.exercises">
                 <td>{{ex.name}}</td>
                 <td>{{ex.muscleGroup}}</td>
+                <td>
+                    <button style="font-size:.8em; border-radius:45px; margin-right:-4%;" class="btn btn-danger pull-right" ui-sref="deleteExercise({id:ex.exerciseId})">Remove</button>
+                </td>
+                <td>
+                    <button style="font-size:.8em; border-radius:45px; " class="btn btn-danger pull-right" ui-sref="editExercise({id:ex.exerciseId})">Edit</button>
+                </td>
             </tr>
         </tbody>
     </table>

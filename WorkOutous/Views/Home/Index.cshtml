@@ -10,15 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <base href="/" />
-    <!--<script src="jquery-3.2.1.min.js"></script>-->
-    <!---Bootstrap lInks---->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://bootswatch.com/darkly/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Emblema+One|Sarpanch:700" rel="stylesheet">
 </head>
 
 <body ng-controller="AccountController as vm">
@@ -32,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" ui-sref="home">Workout.us</a>
+                <a class="navbar-brand" ui-sref="landingPage">SWOL.YOU</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
@@ -53,7 +51,7 @@
     
 
 
-    <div class="container">
+    <div class="">
         <ui-view></ui-view>
     </div>
 
@@ -78,6 +76,9 @@
     <script src="~/ngApp/services/accountservice.js"></script>
     <script src="~/ngApp/controllers/accountController.js"></script>
     <script src="~/ngApp/controllers/profileController.js"     ></script>
+    <script src="~/ngApp/controllers/exerciseDelete.js"></script>
+    <script src="~/ngApp/controllers/exerciseEdit.js"></script>
+
     <!--angular app-->
     <script src="~/ngApp/app.js"></script>
     <!--Materialize JS-->

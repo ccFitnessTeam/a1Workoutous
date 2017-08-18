@@ -2,8 +2,29 @@
 <div class="col-sm-4 ">
     <div class="panel">
         <div class="panel-body">
-            <img width="140" class="img-responsive img-circle" src={{ctrl.user.userImage}} alt="Alternate Text" />
-            <h3>{{ctrl.user.firstName}}</h3>
+            <div style=" padding:2%;" class="img-rounded" >
+                <center>
+                    <img width="200" class="img-responsive " style="border:solid 10px; border-color:#00bc8c; border-radius: 15%;" src={{ctrl.user.userImage}} alt="Alternate Text" />
+                </center>
+                <br />
+                <div>
+                    <p style="font-size:1.5em;">{{ctrl.user.firstName}}</p>
+                    <div class="stars">
+                        <form action="" style="display:inline;">
+                            <input class="star star-5" id="star-5" type="radio" name="star" />
+                            <label class="star star-5" for="star-5"></label>
+                            <input class="star star-4" id="star-4" type="radio" name="star" />
+                            <label class="star star-4" for="star-4"></label>
+                            <input class="star star-3" id="star-3" type="radio" name="star" />
+                            <label class="star star-3" for="star-3"></label>
+                            <input class="star star-2" id="star-2" type="radio" name="star" />
+                            <label class="star star-2" for="star-2"></label>
+                            <input class="star star-1" id="star-1" type="radio" name="star" />
+                            <label class="star star-1" for="star-1"></label>
+                        </form>
+                    </div>
+                </div>
+            </div>
             
         </div>
         <div class="panel-footer">
@@ -15,7 +36,8 @@
 </div>
 
 <div class="col-sm-7 ">
-    <a ui-sref="addWorkout" class="btn btn-default">New Workout</a>
+    <a ui-sref="addWorkout" style="margin-bottom:3%;" class="btn btn-default">New Workout </a>
+    <br />
     <div style="" class="panel ">
         <div class="panel-body">
             <table class="table table-responsive table-striped" >
@@ -33,3 +55,5 @@
         </div>
     </div>
 </div>
+
+
