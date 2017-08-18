@@ -8,16 +8,11 @@ class WorkoutController {
 
         this.workout = {
             name: "",
+            userId: 0,
             exercises: []
         };
     }
     
-    setWorkOut(workOutName) {
-        console.log(this.workout);
-        console.log(this.workOutName);
-        this.workout.name = this.workOutName;
-    }
-
     getAllExercises() {
         this.exerciseService.getAllExercises().then((res) => { this.exercises = res.data; });
     }
@@ -32,6 +27,7 @@ class WorkoutController {
     }
 
     addWorkout() {
+        this.workout.userId = sessionStorage.getItem("userToken");
         console.log(this.workout);
         this.workoutService.add(this.workout);
     }

@@ -3,9 +3,10 @@
         this.account = $account;
         this.userId = sessionStorage.getItem("userToken");
         this.getWorkouts(this.userId);
-        this.workouts;
         this.user;
+        this.workOutId;
         this.getUserInfo();
+
     }
 
     getUserInfo() {
@@ -17,7 +18,9 @@
 
     getWorkouts(uid) {
         this.account.getWorkOutsById(uid).then((res) => {
-            this.workouts = res.data
+            this.workouts = res.data;
+            console.log(this.workouts);
         });
     }
+
 }

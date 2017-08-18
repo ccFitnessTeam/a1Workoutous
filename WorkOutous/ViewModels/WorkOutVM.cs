@@ -10,6 +10,7 @@ namespace WorkOutous.ViewModels
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public int userId { get; set; }
         public List<Exercise> Exercises { get; set; }
     }
 }

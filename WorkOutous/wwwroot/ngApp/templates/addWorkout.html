@@ -14,10 +14,10 @@ Search Exercises: <input id="ExerciseSearch" type="text" name="input" value="" n
                 <tbody>
                     <tr ng-repeat="exercise in ctrl.exercises">
                         <td style="font-size:1.6em;">
-                            {{exercise.exercise}}
+                            {{exercise.name}}
                         </td>
                         <td style="font-size:1.6em;">
-                            {{exercise.muscelGroup}}
+                            {{exercise.muscleGroup}}
                         </td>
                         <td>
                             <button style="font-size:2em; border-radius:45px; " class="btn btn-danger pull-right" ng-model="exercise" ng-click="ctrl.addToWorkOut(exercise)">+</button>
@@ -37,14 +37,11 @@ Search Exercises: <input id="ExerciseSearch" type="text" name="input" value="" n
             <form ng-submit="ctrl.addWorkout()">
                 <div class="form-group">
                     <label>Workout</label>
-                    <input type="text" class="form-control" ng-model="ctrl.workout.name" ng-change="ctrl.doSearchWorkOut(input)" />
+                    <input type="text" class="form-control" ng-model="ctrl.workout.name" />
                 </div>
 
                 <ul style="font-size:1.6em;">
-                    <li ng-repeat="exercise in ctrl.workout.exercises" >{{exercise.exercise}}</li>
-                    <li ng-repeat="workOut in ctrl.workOut">{{workOut.workOutName}}
-                        <button style="font-size:1em; border-radius:45px; " class="btn btn-danger " ng-model="workOut.workOutName" ng-click="ctrl.setWorkOut(workOut.workOutName)">=</button>
-                    </li>
+                    <li ng-repeat="exercise in ctrl.workout.exercises" >{{exercise.name}}</li>
                 </ul>
                 <div>
                     <button class="btn btn-danger" style="font-size:1.6em;" type="submit">Create Workout!</button>

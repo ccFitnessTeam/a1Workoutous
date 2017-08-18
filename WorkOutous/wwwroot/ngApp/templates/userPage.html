@@ -16,20 +16,27 @@
 
 <div class="col-sm-7 ">
     <a ui-sref="addWorkout" class="btn btn-default">New Workout</a>
-    <div style="" class="panel ">
-        <div class="panel-body">
-            <table class="table table-responsive table-striped" >
-                <thead>
-                    <tr>
-                        <th>My Workouts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="workout in ctrl.workouts">
-                        <td>{{workout.workOutName}}</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!--<div style="" class="panel " >
+        <div class="panel panel-default">
+            <div class="panel-body">-->
+    <div class="container">
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>My Workouts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="workout in ctrl.workouts">
+                    <td>{{workout.workOutName}}</td>
+                    <td>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         </div>
+        <!--</div>
+            </div>
+        </div>-->
     </div>
-</div>

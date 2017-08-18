@@ -5,11 +5,14 @@ class AccountService{
         this.registerResource = "/api/account/register/";
         this.resource = "/api/account/";
         this.userResource = "/api/user/";
+        this.workoutResource = "/api/Work/GetWorkOutExercises/?woId=";
         this.http = $http;
     }
 
     login(data) {
-       return this.http.post(this.loginResource, data);
+        var returnData = this.http.post(this.loginResource, data);
+        console.log(returnData);
+       return returnData;
     }
 
     register(data) {
@@ -22,5 +25,9 @@ class AccountService{
 
     getUser(id) {
         return this.http.get(this.userResource + id);
+    }
+
+    getExercisesWorkOutId(woId) {
+        return this.http.get(this.workoutResource + woId);
     }
 }
