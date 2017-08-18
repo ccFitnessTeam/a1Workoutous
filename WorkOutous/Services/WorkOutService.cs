@@ -69,6 +69,12 @@ namespace WorkOutous.Services
             if (workout.WorkOutId == 0)
             {
                 _repo.Add(workout);
+                var workoutToAdd = new UserWorkouts
+                {
+                    AppUserId = wo.userId,
+                    WorkoutId = workout.WorkOutId
+                };
+                _repo.Add(workoutToAdd);
             }
             else
             {
@@ -91,6 +97,23 @@ namespace WorkOutous.Services
             var workout = GetById(id);
             _repo.Delete(workout);
         }
+        // get exercises by workout id
+        public List<Exercise> GetExercisesByWorkoutId(int woId)
+        {
+            var woe = _repo.Query<WorkOutExercise>().Where(w => w.WorkOutId == woId).ToList();
+            var workoutExercises = new List<Exercise>();
+            foreach (var item in woe)
+            {
+                var exercise = _repo.Query<Exercise>().Where(e => e.ExerciseId == item.ExerciseId).Select(e => new Exercise
+                {
+                    Name = e.Name,
+                    MuscleGroup = e.MuscleGroup
+                }).FirstOrDefault();
+                workoutExercises.Add(exercise);
+            }
+            return workoutExercises;
+        }
+
         //get workouts by user id 
         public List<WorkOut> GetWorkoutsByUser(int uId)
         {
