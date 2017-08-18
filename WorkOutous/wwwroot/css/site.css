@@ -132,8 +132,9 @@ span {
 #homeMain2 {
   
     width:100%;
-    height:auto;
-    margin-top:-5%;
+    height:80%;
+    margin-right:-10%;
+    margin-right:2%;
 }
 .lItem{
     font-size:2em;
